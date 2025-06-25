@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
 import styles from "./home.module.css";
-import { MapPin, Code, Camera, ArrowRight } from "lucide-react";
+import { MapPin, Code, Camera, ArrowRight, Volume2 } from "lucide-react";
+import { Heart, Brain } from "lucide-react";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -56,57 +57,88 @@ export default function Home() {
           <div className={styles.contentSection}>
             <div className={styles.introBlock}>
               <div className={styles.nameSection}>
-                <h2 className={styles.greeting}>HELLO, I'M AARADHYA</h2>
+                <div className={styles.greetingsContainer}>
+                  <h2 className={styles.greeting}>Hello, I am Aaradhya</h2>
+                  <div className={styles.nepali}>- आराध्य</div>
+                </div>
 
                 {/* Pronunciation Guide */}
                 <div className={styles.pronunciationGuide}>
-                  <span className={styles.pronunciation}>[ A-RAA-DIA ]</span>
-                  <span className={styles.pronunciation}>आराध्य</span>
+                  <Volume2 className={styles.pronounciationIcon} size={16}/>
+                  <span className={styles.pronunciation}>
+                    <em>[A-raa-dia]</em>
+                  </span>
                 </div>
               </div>
 
               {/* Status Tags */}
               <div className={styles.statusGrid}>
                 <div className={styles.statusItem}>
-                  <MapPin size={16} />
+                  <MapPin size={16} color="#ef4444" />
                   <span>SAN FRANCISCO, CA</span>
                 </div>
                 <div className={styles.statusItem}>
-                  <Code size={16} />
+                  <Code size={16} color="#ef4444" />
                   <span>SOFTWARE ENGINEER</span>
                 </div>
                 <div className={styles.statusItem}>
-                  <Camera size={16} />
+                  <Camera size={16} color="#ef4444" />
                   <span>PHOTOGRAPHER</span>
                 </div>
               </div>
             </div>
 
-            {/* Bio Content */}
+            {/* Enhanced Bio Content */}
             <div className={styles.bioSection}>
               <div className={styles.bioStatement}>
-                <p className={styles.bioText}>
-                  Based in San Francisco, I craft intuitive{" "}
-                  <em className={styles.highlight}>full-stack applications</em>
-                </p>
-              </div>
+                <div className={`${styles.bioItem} ${styles.bioItemPrimary}`}>
+                  <Code className={styles.icon} />
+                  <p className={styles.bioText}>
+                    Bay Area developer passionate about crafting scalable{" "}
+                    <em className={styles.highlight}>full-stack web</em> and{" "}
+                    <em className={styles.highlight}>mobile applications</em>{" "}
+                    that solve real-world problems.
+                  </p>
+                </div>
 
-              <div className={styles.activitiesCard}>
-                <p className={styles.bioText}>
-                  When not coding, you'll find me:
-                </p>
-                <div className={styles.activitiesList}>
-                  <div className={styles.activityItem}>
-                    <div className={styles.activityDot}></div>
-                    <span>practicing Brazilian Jiu Jitsu</span>
+                <div className={`${styles.bioItem} ${styles.bioItemSecondary}`}>
+                  <Heart className={styles.icon} />
+                  <div className={styles.bioText}>
+                    <p className={styles.bioTextMain}>
+                      My High School CS teacher Mr. Lindsay once said:{" "}
+                      <em className={styles.highlight}>
+                        "Programming is the bridge from imagination to reality."
+                      </em> That's when I found my calling.
+                    </p>
                   </div>
-                  <div className={styles.activityItem}>
-                    <div className={styles.activityDot}></div>
-                    <span>lifting weights</span>
-                  </div>
-                  <div className={styles.activityItem}>
-                    <div className={styles.activityDot}></div>
-                    <span>taking pictures around the Bay Area</span>
+                </div>
+
+                <div className={`${styles.bioItem} ${styles.bioItemTertiary}`}>
+                  <Brain className={styles.icon} />
+                  <div className={styles.bioText}>
+                    <p className={styles.bioTextMain}>
+                      My Other Interests:
+                    </p>
+                    <ul className={styles.bioList}>
+                      <li className={styles.bioListItem}>
+                        <span className={styles.bioEmoji}>📸</span>
+                        <em className={styles.highlight}>Photography</em>
+                      </li>
+                      <li className={styles.bioListItem}>
+                        <span className={styles.bioEmoji}>🥷</span>
+                        <em className={styles.highlight}>
+                          Brazilian Jiu-Jitsu
+                        </em>
+                      </li>
+                      <li className={styles.bioListItem}>
+                        <span className={styles.bioEmoji}>🏋️‍♂️</span>
+                        <em className={styles.highlight}>Weight-Lifting</em>
+                      </li>
+                      <li className={styles.bioListItem}>
+                        <span className={styles.bioEmoji}>🏃‍♂️</span>
+                        <em className={styles.highlight}>Running Half Marathons</em>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

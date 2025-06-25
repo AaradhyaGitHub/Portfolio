@@ -34,6 +34,13 @@ h6 {
   line-height: 1.2;
 }
 
+li {
+  font-family: "Rationale", sans-serif;
+}
+p {
+  font-family: "Rationale", sans-serif;
+}
+
 /* Special class for the Sanskrit word */
 .sanskrit-text {
   font-family: "Yatra One", cursive;

@@ -14,6 +14,8 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Birthstone&family=Yatra+One&display=swap"
           rel="stylesheet"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Rationale&display=swap" rel="stylesheet" />
+        
       </Head>
       <div className={styles.mainContainer}>
         <Navbar />

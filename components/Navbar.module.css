@@ -1,9 +1,9 @@
 .mainContainer {
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 0;
   transform: translateY(-50%);
-  width: 25%;
+  width: 10%;
 }
 
 .navList {
@@ -16,21 +16,17 @@
 }
 
 .navItems {
-  background-color: rgb(36, 36, 36);
   padding: 2px 1px 5px 3px;
   text-align: left;
   letter-spacing: 1px;
-  font-family: "Birthstone", cursive;
   font-size: 2.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  border-radius: 10px;
   
-  /* Create the shape and border using box-shadow */
-  clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
-  filter: drop-shadow(0 0 0 2px white);
 }
 
 /* Link Styling */
@@ -51,5 +47,5 @@
 
 /* Optional: change text color on hover */
 .navItems:hover a {
-  color: red;
+  color: rgb(89, 89, 89);
 }

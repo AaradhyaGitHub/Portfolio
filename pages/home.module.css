@@ -6,30 +6,516 @@
   overflow-x: hidden;
 }
 
-.header {
+
+/* Animation Toggle Button */
+.animationToggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  padding: 12px 16px;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 8px;
+  
+  color: #d1d5db;
+  font-size: 0.875rem;
+  font-weight: 500;
+  
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  /* Subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.animationToggle:hover {
+  background: rgba(17, 24, 39, 0.9);
+  border-color: rgba(215, 52, 66, 0.5);
+  color: rgba(215, 52, 66, 0.8);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.animationToggle:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toggleText {
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+/* Responsive - Hide text on mobile */
+@media (max-width: 480px) {
+  .animationToggle {
+    top: 16px;
+    right: 16px;
+    padding: 10px;
+  }
+  
+  .toggleText {
+    display: none;
+  }
+}
+
+
+/* Background Pattern */
+.backgroundPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-size: 400px 400px;
+}
+
+/* Quote Container - Unified container for smooth animation */
+.quoteContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  padding-top: 90px;
-  gap: 10px;
+  gap: 24px;
+  width: 90%;
+  max-width: 800px;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Positioning states */
+.quoteContainer.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.quoteContainer.movingToTop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: smoothMoveToTop 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.quoteContainer.finalPosition {
+  position: relative;
+  margin: 80px auto 32px auto;
+  transform: none;
+}
+
+@keyframes smoothMoveToTop {
+  0% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    position: absolute;
+    top: 120px; /* Approximate final position */
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Quote text styles with smooth size transitions */
 .quote {
-  font-size: 1.8rem;
-  letter-spacing: 0.1rem;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  transition: font-size 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.teacherCredit {
-  letter-spacing: 0.1rem;
-  font-size: 1.2rem;
-  color: rgba(215, 52, 66, 0.52);
+
+.quote.largeQuote {
+  font-size: 2rem;
+}
+
+.quote.smallQuote {
+  font-size: 1.8rem;
 }
 
 .quoteHighlight {
-  color: rgb(215, 52, 66, 0.52);
+  color: rgba(215, 52, 66, 0.5);
+}
+
+/* Teacher credit with smooth size transitions */
+.teacherCredit {
+  letter-spacing: 0.1rem;
+  color: rgba(215, 52, 66, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  transition: font-size 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.teacherCredit.largeCreditText {
+  font-size: 1.2rem;
+}
+
+.teacherCredit.smallCreditText {
+  font-size: 1.2rem;
 }
 
 .headerIcon {
-  color: rgb(215, 52, 66, 0.52);
+  color: rgba(215, 52, 66, 0.5);
+}
+
+/* Loading Bar Styles */
+.loadingContainer {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+}
+
+.loadingBar {
+  width: 100%;
+  height: 3px;
+  background: rgba(101, 101, 101, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loadingProgress {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(215, 52, 66, 0.7),
+    rgba(215, 52, 66, 0.9)
+  );
+  border-radius: 2px;
+  transition: width 0.1s ease-out;
+}
+
+/* Typing cursor */
+.cursor {
+  color: rgba(215, 52, 66, 0.7);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Main Section */
+.mainSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px 64px 16px;
+}
+
+.heroContainer {
+  max-width: 1152px;
+  width: 100%;
+  position: relative;
+}
+
+/* Hero Card */
+.heroCard {
+  position: relative;
+  background: rgba(17, 24, 39, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  min-height: 600px;
+}
+
+/* Profile Section */
+.profileSection {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.greeting {
+  display: inline-block;
+}
+
+.greetingText {
+  color: rgba(215, 52, 66, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.1;
+  margin: 0;
+}
+.pronounciation {
+  margin-top: -1.1rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #d1d5db;
+}
+
+.icon {
+  color: rgba(215, 52, 66, 0.7);
+  flex-shrink: 0;
+}
+
+.infoText {
+  font-size: 1.125rem;
+}
+
+.description {
+  padding-top: 16px;
+}
+
+.descriptionText {
+  color: #9ca3af;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.accentLine {
+  padding-top: 24px;
+}
+
+
+
+/* Image Section */
+.imageSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+/* Floating accent elements */
+.accentElement1 {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 96px;
+  height: 96px;
+  background: rgba(215, 52, 66, 0.1);
+  border-radius: 50%;
+  filter: blur(24px);
+}
+
+.accentElement2 {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  width: 128px;
+  height: 128px;
+  background: rgba(215, 52, 66, 0.05);
+  border-radius: 50%;
+  filter: blur(24px);
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollIndicatorContainer {
+  width: 24px;
+  height: 40px;
+  border: 2px solid #4b5563;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.scrollIndicatorDot {
+  width: 4px;
+  height: 12px;
+  background: rgba(215, 52, 66, 0.5);
+  border-radius: 2px;
+  margin-top: 8px;
+  animation: pulse 2s infinite;
+}
+
+/* Animations */
+.fadeIn {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.fadeInUpDelay {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease-out;
+  transition-delay: 0.3s;
+}
+
+.fadeInUpDelayLong {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease-out;
+  transition-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .quote.largeQuote {
+    font-size: 2.5rem;
+  }
+
+  .quote.smallQuote {
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 4rem;
+  }
+
+  .profileSection {
+    padding: 64px 48px;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imageContainer {
+    width: 420px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quote.largeQuote {
+    font-size: 1.8rem;
+  }
+
+  .quote.smallQuote {
+    font-size: 1.5rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .profileSection {
+    padding: 32px 24px;
+  }
+
+  .infoText {
+    font-size: 1rem;
+  }
+
+  .descriptionText {
+    font-size: 1rem;
+  }
+
+  .imageContainer {
+    width: 240px;
+    height: 240px;
+  }
+
+  .imageSection {
+    padding: 24px;
+  }
+
+  .quoteContainer {
+    width: 95%;
+  }
 }

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { MdOutlineSportsMartialArts } from "react-icons/md";
 import MyJourney from "../components/MyJourney";
+import MyArsenal from "../components/MyArsenal";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
@@ -282,7 +283,8 @@ export default function Home() {
         {/* MyJourney Component - Only show after animation complete */}
         {animationPhase === "complete" ? (
           <>
-            <MyJourney /> <h1>Hello</h1>
+            <MyJourney />
+            <MyArsenal />
           </>
         ) : null}
       </div>

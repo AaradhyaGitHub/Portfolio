@@ -76,7 +76,7 @@ const Donut = ({
           cx={x}
           cy={y - 18}
           r="32"
-          fill="rgba(255,255,255,0.95)"
+          fill="rgba(255, 255, 255, 0)"
           className={styles.iconBg}
           style={{ pointerEvents: "none" }}
         />
@@ -182,7 +182,7 @@ const Donut = ({
         </ResponsiveContainer>
 
         <div className={styles.centerIcon}>
-          <CenterIcon size={205} />
+          <CenterIcon size={205} color={"#d83b3b"}/>
         </div>
       </div>
 

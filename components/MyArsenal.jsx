@@ -21,7 +21,8 @@ export default function MyArsenal() {
       name: "Next.js",
       icon: Globe,
       image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg"
+
     },
     {
       name: "Redux/Context",
@@ -80,8 +81,7 @@ export default function MyArsenal() {
     {
       name: "AWS",
       icon: Globe,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+      image: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg"
     }
   ];
 

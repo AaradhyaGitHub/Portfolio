@@ -1,66 +1,111 @@
 /* ===========================================
-   MAIN CONTAINER
+   MAIN CONTAINER - Aligned with Home Theme
    =========================================== */
 
 .container {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #64748b;
+  background: #000000;
+  color: #656565;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* ===========================================
-       HEADER SECTION
-       =========================================== */
+   HEADER SECTION - Matches Home Glass Morphism
+   =========================================== */
 
 .header {
   text-align: center;
-  margin-bottom: 3rem;
+  padding: 48px 32px 32px;
+  backdrop-filter: blur(8px);
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: #f8fafc;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
-  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: #94a3b8;
+  font-size: 1.125rem;
+  color: #9ca3af;
+  margin: 0;
   font-weight: 400;
-  letter-spacing: 0.025em;
+  line-height: 1.6;
 }
 
 /* ===========================================
-       NAVIGATION TABS
-       =========================================== */
+   MAIN LAYOUT
+   =========================================== */
+
+.mainLayout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(80vh - 200px);
+}
+
+/* ===========================================
+   SIDEBAR - Home Component Style
+   =========================================== */
+
+.sidebar {
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.284);
+
+  background-color: #001c8130;
+  padding: 90px 0;
+  position:static;
+  top: 0;
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.sidebarContent {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.navTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(215, 52, 66, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+/* ===========================================
+   NAVIGATION - Home Component Consistency
+   =========================================== */
 
 .navigation {
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .navButton {
-  padding: 0.75rem 1.5rem;
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(100, 116, 139, 0.2);
-  border-radius: 50px;
-  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #d1d5db;
   font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -75,7 +120,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgba(215, 52, 66, 0.1),
     transparent
   );
   transition: left 0.5s;
@@ -86,36 +131,156 @@
 }
 
 .navButton:hover {
-  border-color: rgba(148, 163, 184, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(17, 24, 39, 0.5);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .navButtonActive {
-  background: var(--active-color);
-  border-color: var(--active-color);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(215, 52, 66, 0.1);
+  color: rgba(215, 52, 66, 0.8);
+  border: 1px solid rgba(215, 52, 66, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(215, 52, 66, 0.1);
 }
 
 .navButtonActive:hover {
-  transform: translateY(-2px);
+  background: rgba(215, 52, 66, 0.15);
+  transform: translateY(-1px);
+}
+
+.navButton span {
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
 /* ===========================================
-       CONTENT CONTAINER
-       =========================================== */
+   RESUME ACTIONS
+   =========================================== */
+
+.resumeActions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+.resumeActionButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 8px;
+  color: #d1d5db;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  width: 100%;
+}
+
+.resumeActionButton:hover {
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(215, 52, 66, 0.5);
+  color: rgba(215, 52, 66, 0.8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================================
+   MAIN CONTENT
+   =========================================== */
+
+.mainContent {
+  padding: 32px;
+  overflow-y: auto;
+  height: 60vh;
+  background-color: #001c8130;
+  border: 1px solid rgba(75, 85, 99, 0.284);
+
+}
+
 
 .contentContainer {
-  position: relative;
-  max-width: 1000px;
+  max-width: 1152px;
   margin: 0 auto;
 }
 
 /* ===========================================
-       TIMELINE CONTAINER
-       =========================================== */
+   RESUME VIEWER
+   =========================================== */
+
+.resumeViewer {
+  background: rgba(17, 24, 39, 0.3);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+}
+
+.resumeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  background: rgba(17, 24, 39, 0.5);
+  border-bottom: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+.resumeTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.closeResumeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(215, 52, 66, 0.1);
+  border: 1px solid rgba(215, 52, 66, 0.3);
+  border-radius: 8px;
+  color: rgba(215, 52, 66, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeResumeButton:hover {
+  background: rgba(215, 52, 66, 0.2);
+  border-color: rgba(215, 52, 66, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(215, 52, 66, 0.2);
+}
+
+.resumeContent {
+  flex: 1;
+  padding: 0;
+}
+
+.resumeFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+/* ===========================================
+   TIMELINE CONTAINER
+   =========================================== */
 
 .timelineContainer {
   position: relative;
@@ -127,31 +292,35 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 32px;
 }
 
 /* ===========================================
-       TIMELINE ITEMS
-       =========================================== */
+   TIMELINE ITEMS
+   =========================================== */
 
 .timelineItem {
   opacity: 0;
-  transform: translateY(20px);
-  animation: slideInUp 0.6s ease-out forwards;
+  transform: translateY(16px);
+  animation: fadeInUp 0.8s ease-out forwards;
   position: relative;
 }
 
 .timelineItem:not(:last-child)::after {
   content: "";
   position: absolute;
-  left: 1.5rem;
-  bottom: -1rem;
+  left: 24px;
+  bottom: -16px;
   width: 2px;
-  height: 1rem;
-  background: linear-gradient(to bottom, rgba(148, 163, 184, 0.3), transparent);
+  height: 16px;
+  background: linear-gradient(to bottom, rgba(75, 85, 99, 0.5), transparent);
 }
 
-@keyframes slideInUp {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -161,64 +330,66 @@
 .timelineContent {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 24px;
   position: relative;
 }
 
 /* ===========================================
-       ICON CONTAINER
-       =========================================== */
+   ICON CONTAINER - Home Style
+   =========================================== */
 
 .iconContainer {
   flex-shrink: 0;
-  width: 3rem;
-  height: 3rem;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid rgba(15, 23, 42, 0.8);
+  border: 2px solid rgba(75, 85, 99, 0.5);
+  background: rgba(17, 24, 39, 0.8);
   position: relative;
   z-index: 2;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .iconContainer::before {
   content: "";
   position: absolute;
-  inset: -6px;
+  inset: -4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, currentColor, transparent);
+  background: linear-gradient(135deg, rgba(215, 52, 66, 0.3), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
 }
 
 .timelineItem:hover .iconContainer::before {
-  opacity: 0.2;
+  opacity: 1;
 }
 
 .timelineItem:hover .iconContainer {
-  transform: scale(1.1);
+  transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(215, 52, 66, 0.5);
 }
 
 .icon {
-  color: white;
+  color: rgba(255, 254, 254, 0.7);
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 /* ===========================================
-       EVENT CARDS WITH LARGER IMAGES
-       =========================================== */
+   EVENT CARDS - Home Component Style
+   =========================================== */
 
 .eventCard {
   flex: 1;
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(100, 116, 139, 0.2);
+  background: rgba(17, 24, 39, 0.3);
+  border: 1px solid rgba(75, 85, 99, 0.5);
   border-radius: 16px;
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
+  padding: 24px;
+  backdrop-filter: blur(8px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -234,7 +405,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(148, 163, 184, 0.3),
+    rgba(215, 52, 66, 0.5),
     transparent
   );
   transform: translateX(-100%);
@@ -246,27 +417,39 @@
 }
 
 .timelineItem:hover .eventCard {
-  background: rgba(30, 41, 59, 0.8);
-  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(215, 52, 66, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cardContent {
   display: flex;
   align-items: flex-start;
-  gap: 1.25rem;
+  gap: 20px;
 }
 
-/* LARGER IMAGE CONTAINER FOR TIMELINE */
+/* IMAGE CONTAINER - Consistent with Home */
 .imageContainer {
   flex-shrink: 0;
   width: 120px;
   height: 90px;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(100, 116, 139, 0.2);
+  background: rgb(251, 251, 251);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  position: relative;
+}
+
+.eventImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.timelineItem:hover .eventImage {
+  transform: scale(1.05);
 }
 
 .imagePlaceholder {
@@ -276,11 +459,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #64748b;
+  color: #656565;
   font-size: 0.8rem;
   text-align: center;
-  gap: 0.5rem;
+  gap: 8px;
+  position: relative;
 }
+
+.imageIconFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #656565;
+  font-size: 0.8rem;
+  text-align: center;
+  gap: 8px;
+}
+
+/* ===========================================
+   EVENT DETAILS
+   =========================================== */
 
 .eventDetails {
   flex: 1;
@@ -290,26 +491,26 @@
 .eventHeader {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
+  gap: 16px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
 .eventYear {
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 0.25rem 0.75rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  border: 1px solid currentColor;
-  opacity: 0.9;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  padding: 4px 12px;
+  background: rgba(215, 52, 66, 0.1);
+  color: rgba(215, 52, 66, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(215, 52, 66, 0.3);
   flex-shrink: 0;
 }
 
 .eventTitle {
   font-size: 1.25rem;
-  color: #f8fafc;
+  color: white;
   font-weight: 600;
   line-height: 1.3;
   margin: 0;
@@ -317,107 +518,126 @@
 }
 
 .eventDescription {
-  font-size: 0.95rem;
-  color: #94a3b8;
-  line-height: 1.5;
+  font-size: 1rem;
+  color: #9ca3af;
+  line-height: 1.6;
   margin: 0;
 }
 
 /* ===========================================
-       COURSES & CERTIFICATES SECTION - UPDATED WITH 3x3 GRID
-       =========================================== */
+   COURSES CONTAINER
+   =========================================== */
 
 .coursesContainer {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 1000px;
+  gap: 32px;
+  max-width: 1152px;
   margin: 0 auto;
 }
 
-/* Sub-navigation for courses */
+/* ===========================================
+   COURSES SUB-NAVIGATION
+   =========================================== */
+
 .coursesSubNav {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
 .subNavButton {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(100, 116, 139, 0.3);
-  border-radius: 12px;
-  color: #cbd5e1;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(17, 24, 39, 0.3);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 8px;
+  color: #d1d5db;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
 }
 
 .subNavButton:hover {
-  background: rgba(30, 41, 59, 0.6);
-  border-color: rgba(148, 163, 184, 0.4);
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(215, 52, 66, 0.3);
+  color: rgba(215, 52, 66, 0.8);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .subNavButtonActive {
-  background: rgba(34, 197, 94, 0.2);
-  border-color: rgba(34, 197, 94, 0.4);
-  color: #22c55e;
+  background: rgba(215, 52, 66, 0.1);
+  border-color: rgba(215, 52, 66, 0.5);
+  color: rgba(215, 52, 66, 0.8);
 }
 
 .subNavButtonActive:hover {
-  background: rgba(34, 197, 94, 0.25);
+  background: rgba(215, 52, 66, 0.15);
 }
 
-/* Courses Grid - 3x3 Layout */
+/* ===========================================
+   COURSES GRID - 3x3 LAYOUT
+   =========================================== */
+
 .coursesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 24px;
   padding: 0;
 }
 
+/* ===========================================
+   COURSE CARDS - Home Component Style
+   =========================================== */
+
 .courseCard {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(100, 116, 139, 0.2);
-  border-radius: 20px;
+  background: rgba(17, 24, 39, 0.3);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   position: relative;
   opacity: 0;
-  transform: translateY(20px);
-  animation: slideInUp 0.6s ease-out forwards;
+  transform: translateY(16px);
+  animation: fadeInUp 0.8s ease-out forwards;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .courseCard:hover {
-  background: rgba(30, 41, 59, 0.8);
-  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(215, 52, 66, 0.3);
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Course Image Container - Bigger Images */
+/* Course Image Container */
 .courseImageContainer {
   position: relative;
   height: 160px;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.8),
-    rgba(30, 41, 59, 0.6)
-  );
-  border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+  background: rgba(17, 24, 39, 0.8);
+  border-bottom: 1px solid rgba(75, 85, 99, 0.5);
   overflow: hidden;
   flex-shrink: 0;
+}
+
+.courseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.courseCard:hover .courseImage {
+  transform: scale(1.05);
 }
 
 .courseImagePlaceholder {
@@ -427,9 +647,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #64748b;
-  font-size: 0.9rem;
-  gap: 0.5rem;
+  color: #656565;
+  font-size: 0.875rem;
+  gap: 8px;
   position: relative;
 }
 
@@ -440,7 +660,7 @@
   background: linear-gradient(
     45deg,
     transparent,
-    rgba(148, 163, 184, 0.1),
+    rgba(215, 52, 66, 0.1),
     transparent
   );
   transform: translateX(-100%);
@@ -458,42 +678,42 @@
   right: 12px;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 8px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  backdrop-filter: blur(10px);
+  letter-spacing: 0.025em;
+  backdrop-filter: blur(8px);
   border: 1px solid;
   z-index: 10;
 }
 
 .statusBadge.completed {
-  background: rgba(34, 197, 94, 0.2);
-  color: #22c55e;
-  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(2, 96, 37, 0.433);
+  color: #13ff13;
+  border-color: rgba(19, 121, 56, 0.96);
 }
 
 .statusBadge.inprogress {
-  background: rgba(249, 115, 22, 0.2);
+  background: rgba(249, 115, 22, 0.1);
   color: #f97316;
   border-color: rgba(249, 115, 22, 0.3);
 }
 
 /* Course Content */
 .courseContent {
-  padding: 1.5rem;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
   flex: 1;
 }
 
 .courseTitle {
-  font-size: 1.1rem;
-  color: #f8fafc;
+  font-size: 1.125rem;
+  color: white;
   font-weight: 600;
   line-height: 1.4;
   margin: 0;
@@ -506,29 +726,29 @@
 .courseMetadata {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .courseProvider,
 .courseYear {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  color: #94a3b8;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #9ca3af;
 }
 
 .courseType {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 4px 12px;
   background: rgba(59, 130, 246, 0.1);
   color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   align-self: flex-start;
 }
 
@@ -536,85 +756,157 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.25rem;
-  margin: 0 1.5rem 1.5rem;
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.1),
-    rgba(59, 130, 246, 0.05)
-  );
+  gap: 8px;
+  padding: 14px 20px;
+  margin: 0 24px 24px;
+  background: rgba(59, 130, 246, 0.1);
   border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 12px;
+  border-radius: 8px;
   color: #60a5fa;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   margin-top: auto;
 }
 
 .courseButton:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.2),
-    rgba(59, 130, 246, 0.1)
-  );
-  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
-}
-
-.courseButton:active {
-  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 /* ===========================================
-       RESPONSIVE DESIGN
-       =========================================== */
+   EMPTY STATE
+   =========================================== */
 
-@media (max-width: 1024px) {
-  .container {
-    padding: 3rem 1.5rem;
-  }
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 32px;
+  text-align: center;
+  color: #656565;
+}
 
+.emptyStateIcon {
+  margin-bottom: 24px;
+  opacity: 0.5;
+  color: rgba(215, 52, 66, 0.5);
+}
+
+.emptyState h3 {
+  color: #9ca3af;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.emptyState p {
+  color: #656565;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (min-width: 768px) {
   .title {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
-  .coursesGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+  .header {
+    padding: 64px 48px 48px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
-    padding: 2rem 1rem;
+    padding: 48px 24px;
   }
 
   .title {
     font-size: 2.5rem;
   }
 
-  .navigation {
-    gap: 0.25rem;
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainLayout {
+    grid-template-columns: 1fr;
   }
 
-  .navButton {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.875rem;
+  .sidebar {
+    position: static;
+    max-height: none;
+    padding: 16px 0;
+    
+  }
+
+  .sidebarContent {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0 16px;
+    
+  }
+
+  .navigation {
+    flex-direction: row;
+    min-width: max-content;
+  }
+
+  .resumeActions {
+    flex-direction: row;
+    padding-top: 0;
+    border-top: none;
+    border-left: 1px solid rgba(75, 85, 99, 0.5);
+    padding-left: 16px;
+    min-width: max-content;
+  }
+
+  .navButton,
+  .resumeActionButton {
+    white-space: nowrap;
+    min-width: max-content;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .coursesSubNav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
   .timelineContent {
-    gap: 1rem;
+    gap: 16px;
+  }
+
+  .iconContainer {
+    width: 40px;
+    height: 40px;
   }
 
   .cardContent {
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
   }
 
   .imageContainer {
@@ -626,18 +918,7 @@
   .eventHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .coursesSubNav {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .coursesGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 8px;
   }
 
   .courseImageContainer {
@@ -646,40 +927,60 @@
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 1.5rem 0.75rem;
+  .header {
+    padding: 32px 16px 24px;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .subtitle {
     font-size: 1rem;
   }
 
-  .iconContainer {
-    width: 2.5rem;
-    height: 2.5rem;
+  .mainContent {
+    padding: 16px;
   }
 
   .eventCard {
-    padding: 1rem;
+    padding: 16px;
+  }
+
+  .courseCard {
+    padding: 16px;
+  }
+
+  .timelineItem:not(:last-child)::after {
+    left: 20px;
+  }
+
+  .iconContainer {
+    width: 40px;
+    height: 40px;
   }
 
   .courseContent {
-    padding: 1rem;
+    padding: 16px;
   }
 
   .courseButton {
-    margin: 0 1rem 1rem;
-    padding: 0.75rem 1rem;
+    margin: 0 16px 16px;
+    padding: 12px 16px;
+  }
+
+  .imageContainer {
+    height: 100px;
+  }
+
+  .courseImageContainer {
+    height: 120px;
   }
 }
 
 /* ===========================================
-       ANIMATION DELAYS FOR STAGGERED EFFECT
-       =========================================== */
+   ANIMATION DELAYS FOR STAGGERED EFFECT
+   =========================================== */
 
 .timelineItem:nth-child(1) {
   animation-delay: 0.1s;
@@ -720,8 +1021,8 @@
 }
 
 /* ===========================================
-       UTILITY CLASSES
-       =========================================== */
+   UTILITY CLASSES - Home Component Style
+   =========================================== */
 
 .fade-in {
   opacity: 0;
@@ -735,12 +1036,12 @@
 }
 
 .blur-background {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(17, 24, 39, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.5);
 }

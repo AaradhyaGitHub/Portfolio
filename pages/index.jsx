@@ -29,7 +29,7 @@ export default function Home() {
   const toggleAnimation = () => {
     const newAnimationState = !animationEnabled;
     setAnimationEnabled(newAnimationState);
-    
+
     // If turning animation off, immediately show final state
     if (!newAnimationState) {
       setTypedText(fullText);
@@ -102,18 +102,14 @@ export default function Home() {
     <>
       <div className={styles.mainContainer}>
         {/* Animation Toggle Button */}
-        <button 
+        <button
           onClick={toggleAnimation}
           className={styles.animationToggle}
-          title={animationEnabled ? 'Disable Animation' : 'Enable Animation'}
+          title={animationEnabled ? "Disable Animation" : "Enable Animation"}
         >
-          {animationEnabled ? (
-            <Pause size={16} />
-          ) : (
-            <Play size={16} />
-          )}
+          {animationEnabled ? <Pause size={16} /> : <Play size={16} />}
           <span className={styles.toggleText}>
-            {animationEnabled ? 'Skip Animation' : 'Play Animation'}
+            {animationEnabled ? "Skip Animation" : "Play Animation"}
           </span>
         </button>
 
@@ -181,7 +177,11 @@ export default function Home() {
 
         {/* Hero Section - Only show after animation complete */}
         {animationPhase === "complete" && (
-          <main className={`${styles.mainSection} ${animationEnabled ? styles.fadeInUp : ''}`}>
+          <main
+            className={`${styles.mainSection} ${
+              animationEnabled ? styles.fadeInUp : ""
+            }`}
+          >
             <div className={styles.heroContainer}>
               {/* Main Hero Card */}
               <div className={styles.heroCard}>
@@ -228,9 +228,10 @@ export default function Home() {
 
                         <div className={styles.infoItem}>
                           <Zap size={18} className={styles.icon} />
-                          <span className={styles.infoText}>Photographer & BJJ Practicionare</span>
+                          <span className={styles.infoText}>
+                            Photographer & BJJ Practicionare
+                          </span>
                         </div>
-                       
                       </div>
 
                       <div className={styles.description}>
@@ -267,14 +268,23 @@ export default function Home() {
 
         {/* Subtle scroll indicator - Only show when complete */}
         {animationPhase === "complete" && (
-          <div className={`${styles.scrollIndicator} ${animationEnabled ? styles.fadeIn : ''}`}>
+          <div
+            className={`${styles.scrollIndicator} ${
+              animationEnabled ? styles.fadeIn : ""
+            }`}
+          >
             <div className={styles.scrollIndicatorContainer}>
               <div className={styles.scrollIndicatorDot}></div>
             </div>
           </div>
         )}
 
-        <MyJourney />
+        {/* MyJourney Component - Only show after animation complete */}
+        {animationPhase === "complete" ? (
+          <>
+            <MyJourney /> <h1>Hello</h1>
+          </>
+        ) : null}
       </div>
     </>
   );

@@ -1,4 +1,6 @@
+// @ts-nocheck
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   GraduationCap,
   Briefcase,
@@ -9,15 +11,22 @@ import {
   Code,
   Target,
   ExternalLink,
-  Image,
+  Image as ImageIcon,
   CheckCircle,
-  Clock
+  Clock,
+  Eye,
+  FileDown,
+  X,
+  Sparkles,
+  BookOpen,
+  User
 } from "lucide-react";
 import styles from "./MyJourney.module.css";
 
 export default function MyJourney() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeView, setActiveView] = useState("highlights");
   const [coursesView, setCoursesView] = useState("completed");
+  const [showResume, setShowResume] = useState(false);
 
   // ===========================================
   // ALL EVENTS WITH CATEGORIES (REVERSED ORDER - LATEST FIRST)
@@ -31,7 +40,7 @@ export default function MyJourney() {
       category: "highlight",
       icon: GraduationCap,
       isHighlight: true,
-      image: "placeholder-graduation.jpg"
+      image: "/UC-Davis-Logo.png"
     },
     {
       year: "2020",
@@ -40,7 +49,7 @@ export default function MyJourney() {
       category: "highlight",
       icon: Award,
       isHighlight: true,
-      image: "placeholder-google.jpg"
+      image: "/google.png"
     },
     {
       year: "2016",
@@ -49,7 +58,7 @@ export default function MyJourney() {
       category: "highlight",
       icon: Star,
       isHighlight: true,
-      image: "placeholder-immigration.jpg"
+      image: "/nepal.webp"
     },
 
     // Education Events - Latest first
@@ -60,15 +69,23 @@ export default function MyJourney() {
         "Expecting graduation from UC Davis with BS in CS & Tech Management",
       category: "education",
       icon: GraduationCap,
-      image: "placeholder-future-grad.jpg"
+      image: "/aggies.png"
     },
     {
       year: "2020",
-      title: "Joined UC Davis",
+      title: "Joined UC Davis [BS]",
       description: "Declared BS in Computer Science and Technology Management",
       category: "education",
       icon: Building,
-      image: "placeholder-ucdavis.jpg"
+      image: "/ucd-cs.jpg"
+    },
+    {
+      year: "2020",
+      title: "Associates of Science in Mathematics [AS]",
+      description: "Declared BS in Computer Science and Technology Management",
+      category: "education",
+      icon: Building,
+      image: "/bcc.png"
     },
     {
       year: "2020",
@@ -76,7 +93,7 @@ export default function MyJourney() {
       description: "El Cerrito High School - Completed in 2020",
       category: "education",
       icon: Calendar,
-      image: "placeholder-highschool.jpg"
+      image: "/echs.png"
     },
 
     // Relevant Experience Events - Latest first
@@ -86,7 +103,7 @@ export default function MyJourney() {
       description: "City of West Sacramento - Advanced system administration",
       category: "experience",
       icon: Briefcase,
-      image: "placeholder-west-sac.jpg"
+      image: "/westsac_logo.png"
     },
     {
       year: "2022",
@@ -94,7 +111,7 @@ export default function MyJourney() {
       description: "City of El Cerrito - Expanded into financial systems",
       category: "experience",
       icon: Building,
-      image: "placeholder-el-cerrito-2.jpg"
+      image: "/ec-city.png"
     },
     {
       year: "2020",
@@ -102,7 +119,7 @@ export default function MyJourney() {
       description: "Upcycle Zeal - Sustainable business venture",
       category: "experience",
       icon: Target,
-      image: "placeholder-upcycle.jpg"
+      image: "/zeal.jpg"
     },
     {
       year: "2020",
@@ -110,7 +127,7 @@ export default function MyJourney() {
       description: "Google - Intensive computer science program",
       category: "experience",
       icon: Award,
-      image: "placeholder-google-exp.jpg"
+      image: "/google.png"
     },
     {
       year: "2019",
@@ -118,7 +135,7 @@ export default function MyJourney() {
       description: "City of El Cerrito - First tech role, database management",
       category: "experience",
       icon: Code,
-      image: "placeholder-el-cerrito.jpg"
+      image: "/ec-city.png"
     }
   ];
 
@@ -133,8 +150,8 @@ export default function MyJourney() {
       year: "2025",
       status: "completed",
       type: "certificate",
-      link: "#", // Will be updated with actual certificate link
-      image: "placeholder-react-native-cert.jpg"
+      link: "#",
+      image: "/rn-cert.png"
     },
     {
       title: "React - The Complete Guide 2025 (incl. Next.js, Redux)",
@@ -142,8 +159,8 @@ export default function MyJourney() {
       year: "2025",
       status: "completed",
       type: "certificate",
-      link: "#", // Will be updated with actual certificate link
-      image: "placeholder-react-cert.jpg"
+      link: "#",
+      image: "/react-js-cert.png"
     },
     {
       title: "JavaScript Algorithms and Data Structures",
@@ -151,8 +168,8 @@ export default function MyJourney() {
       year: "2020",
       status: "completed",
       type: "certificate",
-      link: "#", // Will be updated with actual certificate link
-      image: "placeholder-js-cert.jpg"
+      link: "#",
+      image: "/js-dsa.png"
     },
     {
       title: "Responsive Web Design",
@@ -160,8 +177,8 @@ export default function MyJourney() {
       year: "2019",
       status: "completed",
       type: "certificate",
-      link: "#", // Will be updated with actual certificate link
-      image: "placeholder-web-design-cert.jpg"
+      link: "#",
+      image: "/web-design.png"
     },
 
     // Completed Courses
@@ -172,7 +189,7 @@ export default function MyJourney() {
       status: "completed",
       type: "course",
       link: "https://www.youtube.com/watch?v=2JYT5f2isg4&t=12993s",
-      image: "placeholder-http-course.jpg"
+      image: "/http.jpg"
     },
 
     // In Progress
@@ -183,7 +200,7 @@ export default function MyJourney() {
       status: "in-progress",
       type: "course",
       link: "https://www.youtube.com/watch?v=NhDYbskXRgc",
-      image: "placeholder-aws-course.jpg"
+      image: "/aws.png"
     },
     {
       title: "Mastering Data Structures & Algorithms using C and C++",
@@ -191,8 +208,8 @@ export default function MyJourney() {
       year: "2025",
       status: "in-progress",
       type: "certificate",
-      link: "#", // Will be updated when completed
-      image: "placeholder-dsa-course.jpg"
+      link: "#",
+      image: "/c-cpp.png"
     },
     {
       title: "Master Python programming by solving scientific projects",
@@ -200,47 +217,93 @@ export default function MyJourney() {
       year: "2025",
       status: "in-progress",
       type: "certificate",
-      link: "#", // Will be updated when completed
-      image: "placeholder-python-course.jpg"
+      link: "#",
+      image: "/python.png"
     }
   ];
 
   // ===========================================
-  // FILTER EVENTS BASED ON ACTIVE CATEGORY
+  // NAVIGATION CONFIGURATION
+  // ===========================================
+  const navigationItems = [
+    {
+      id: "highlights",
+      label: "Recent Highlights",
+      icon: Sparkles,
+      color: "#3b82f6"
+    },
+    {
+      id: "education",
+      label: "Education",
+      icon: GraduationCap,
+      color: "#c83b3bb8"
+    },
+    {
+      id: "experience",
+      label: "Experience",
+      icon: Briefcase,
+      color: "#45a0a3b8"
+    },
+    {
+      id: "courses",
+      label: "Courses & Certificates",
+      icon: BookOpen,
+      color: "#49ad40bf"
+    }
+  ];
+
+  // ===========================================
+  // FILTER EVENTS BASED ON ACTIVE VIEW
   // ===========================================
   const getFilteredEvents = () => {
-    if (activeCategory === "all") {
+    if (activeView === "highlights") {
       return allEvents.filter((event) => event.isHighlight);
     }
-    if (activeCategory === "courses") {
+    if (activeView === "courses") {
       return coursesAndCerts.filter((item) => item.status === coursesView);
     }
-    return allEvents.filter((event) => event.category === activeCategory);
+    return allEvents.filter((event) => event.category === activeView);
   };
-
-  // ===========================================
-  // CATEGORY CONFIGURATION
-  // ===========================================
-  const categories = [
-    { id: "all", label: "Highlights", color: "#3b82f6" },
-    { id: "education", label: "Education", color: "#c83b3bb8" },
-    { id: "experience", label: "Relevant Experience", color: "#9ba345b9" },
-    { id: "courses", label: "Courses & Certificates", color: "#49ad40bf" }
-  ];
 
   const getCurrentColor = () => {
     return (
-      categories.find((cat) => cat.id === activeCategory)?.color || "#3b82f6"
+      navigationItems.find((item) => item.id === activeView)?.color || "#3b82f6"
     );
+  };
+
+  // ===========================================
+  // RESUME HANDLERS
+  // ===========================================
+  const handleViewResume = () => {
+    setShowResume(true);
+  };
+
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/ap-resume.pdf";
+    link.download = "resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleCloseResume = () => {
+    setShowResume(false);
   };
 
   // ===========================================
   // RENDER COURSE/CERTIFICATE GRID
   // ===========================================
   const renderCoursesGrid = () => {
-    const filteredCourses = coursesAndCerts.filter((item) => item.status === coursesView);
-    const completedCount = coursesAndCerts.filter(item => item.status === "completed").length;
-    const inProgressCount = coursesAndCerts.filter(item => item.status === "in-progress").length;
+    const filteredCourses = coursesAndCerts.filter(
+      (item) => item.status === coursesView
+    );
+    const completedCount = coursesAndCerts.filter(
+      (item) => item.status === "completed"
+    ).length;
+    const inProgressCount = coursesAndCerts.filter(
+      (item) => item.status === "in-progress"
+    ).length;
 
     return (
       <div className={styles.coursesContainer}>
@@ -269,8 +332,8 @@ export default function MyJourney() {
         {/* Courses Grid */}
         <div className={styles.coursesGrid}>
           {filteredCourses.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={styles.courseCard}
               style={{
                 animationDelay: `${index * 0.1}s`
@@ -278,9 +341,29 @@ export default function MyJourney() {
             >
               <div className={styles.courseImageContainer}>
                 <div className={styles.courseImagePlaceholder}>
-                  <Image size={40} />
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={80}
+                    height={80}
+                    className={styles.courseImage}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "flex";
+                    }}
+                  />
+                  <div
+                    style={{ display: "none" }}
+                    className={styles.imageIconFallback}
+                  >
+                    <ImageIcon size={40} />
+                  </div>
                 </div>
-                <div className={`${styles.statusBadge} ${styles[item.status.replace('-', '')]}`}>
+                <div
+                  className={`${styles.statusBadge} ${
+                    styles[item.status.replace("-", "")]
+                  }`}
+                >
                   {item.status === "completed" ? (
                     <CheckCircle size={14} />
                   ) : (
@@ -289,10 +372,10 @@ export default function MyJourney() {
                   {item.status === "completed" ? "Completed" : "In Progress"}
                 </div>
               </div>
-              
+
               <div className={styles.courseContent}>
                 <h4 className={styles.courseTitle}>{item.title}</h4>
-                
+
                 <div className={styles.courseMetadata}>
                   <div className={styles.courseProvider}>
                     <Building size={14} />
@@ -303,12 +386,12 @@ export default function MyJourney() {
                     {item.year}
                   </div>
                 </div>
-                
+
                 <div className={styles.courseType}>
                   {item.type === "certificate" ? "Certificate" : "Course"}
                 </div>
               </div>
-              
+
               <a
                 href={item.link}
                 className={styles.courseButton}
@@ -325,12 +408,19 @@ export default function MyJourney() {
         {filteredCourses.length === 0 && (
           <div className={styles.emptyState}>
             <div className={styles.emptyStateIcon}>
-              {coursesView === "completed" ? <CheckCircle size={48} /> : <Clock size={48} />}
+              {coursesView === "completed" ? (
+                <CheckCircle size={48} />
+              ) : (
+                <Clock size={48} />
+              )}
             </div>
-            <h3>No {coursesView === "completed" ? "completed" : "in-progress"} courses yet</h3>
+            <h3>
+              No {coursesView === "completed" ? "completed" : "in-progress"}{" "}
+              courses yet
+            </h3>
             <p>
-              {coursesView === "completed" 
-                ? "Completed courses and certificates will appear here." 
+              {coursesView === "completed"
+                ? "Completed courses and certificates will appear here."
                 : "Courses currently in progress will appear here."}
             </p>
           </div>
@@ -364,8 +454,22 @@ export default function MyJourney() {
             <div className={styles.eventCard}>
               <div className={styles.cardContent}>
                 <div className={styles.imageContainer}>
-                  <div className={styles.imagePlaceholder}>
-                    <Image size={40} />
+                  <Image
+                    src={event.image}
+                    alt={event.title}
+                    width={80}
+                    height={80}
+                    className={styles.eventImage}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "flex";
+                    }}
+                  />
+                  <div
+                    style={{ display: "none" }}
+                    className={styles.imageIconFallback}
+                  >
+                    <ImageIcon size={40} />
                   </div>
                 </div>
                 <div className={styles.eventDetails}>
@@ -388,40 +492,108 @@ export default function MyJourney() {
     });
   };
 
+  // ===========================================
+  // RESUME VIEWER COMPONENT
+  // ===========================================
+  const renderResumeViewer = () => {
+    return (
+      <div className={styles.resumeViewer}>
+        <div className={styles.resumeHeader}>
+          <h2 className={styles.resumeTitle}>
+            <User size={24} />
+            Resume
+          </h2>
+          <button
+            onClick={handleCloseResume}
+            className={styles.closeResumeButton}
+          >
+            <X size={24} />
+          </button>
+        </div>
+        <div className={styles.resumeContent}>
+          <iframe
+            src="/ap-resume.pdf#zoom=80"
+            className={styles.resumeFrame}
+            title="Resume"
+          />
+        </div>
+      </div>
+    );
+  };
+
   return (
     <main className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>My Journey</h1>
-        <p className={styles.subtitle}>From Nepal to Silicon Valley</p>
+        <h1 className={styles.title}>Professional Journey</h1>
+        <p className={styles.subtitle}>
+          Explore my experience, education, and achievements
+        </p>
       </div>
 
-      {/* Category Navigation */}
-      <div className={styles.navigation}>
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => setActiveCategory(category.id)}
-            className={`${styles.navButton} ${
-              activeCategory === category.id ? styles.navButtonActive : ""
-            }`}
-            style={{
-              "--active-color": category.color
-            }}
-          >
-            {category.label}
-          </button>
-        ))}
-      </div>
+      <div className={styles.mainLayout}>
+        {/* Sidebar Navigation */}
+        <aside className={styles.sidebar}>
+          <div className={styles.sidebarContent}>
+            {/* Main Navigation */}
+            <nav className={styles.navigation}>
+              <div className={styles.navTitle}>Portfolio</div>
+              {navigationItems.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveView(item.id)}
+                    className={`${styles.navButton} ${
+                      activeView === item.id ? styles.navButtonActive : ""
+                    }`}
+                    style={{
+                      "--active-color": item.color
+                    }}
+                  >
+                    <IconComponent size={20} />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
 
-      {/* Content Container */}
-      <div className={styles.contentContainer}>
-        {activeCategory === "courses" ? (
-          renderCoursesGrid()
-        ) : (
-          <div className={styles.timelineContainer}>
-            <div className={styles.timeline}>{renderTimelineItems()}</div>
+            {/* Resume Actions */}
+            <div className={styles.resumeActions}>
+              <div className={styles.navTitle}>Resume</div>
+              <button
+                onClick={handleViewResume}
+                className={styles.resumeActionButton}
+              >
+                <Eye size={20} />
+                <span>View Resume</span>
+              </button>
+              <button
+                onClick={handleDownloadResume}
+                className={styles.resumeActionButton}
+              >
+                <FileDown size={20} />
+                <span>Download PDF</span>
+              </button>
+            </div>
           </div>
-        )}
+        </aside>
+
+        {/* Main Content */}
+        <div className={styles.mainContent}>
+          {showResume ? (
+            renderResumeViewer()
+          ) : (
+            <div className={styles.contentContainer}>
+              {activeView === "courses" ? (
+                renderCoursesGrid()
+              ) : (
+                <div className={styles.timelineContainer}>
+                  <div className={styles.timeline}>{renderTimelineItems()}</div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );

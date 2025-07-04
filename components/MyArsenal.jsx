@@ -1,5 +1,13 @@
+// @ts-nocheck
 import React from "react";
-import { FileText, Code, Database, Globe } from "lucide-react";
+import {
+  FileText,
+  Code,
+  Database,
+  Globe,
+  ChevronsLeft,
+  ChevronsRight
+} from "lucide-react";
 import styles from "./MyArsenal.module.css";
 import Donut from "./Donut";
 
@@ -20,9 +28,7 @@ export default function MyArsenal() {
     {
       name: "Next.js",
       icon: Globe,
-      image:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg"
-
+      image: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg"
     },
     {
       name: "Redux/Context",
@@ -88,8 +94,14 @@ export default function MyArsenal() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.mainTitle}>My Arsenal</h1>
-        <p className={styles.subtitle}>Technologies & Tools</p>
+        <h1 className={styles.mainTitle}>What I Can Do</h1>
+        <p className={styles.buttonContainer}>
+          <button className={styles.button}>
+            <ChevronsRight />
+            View Projects
+            <ChevronsLeft />
+          </button>
+        </p>
       </div>
 
       <div className={styles.donutsContainer}>
@@ -111,7 +123,7 @@ export default function MyArsenal() {
           title="Other"
           skills={otherSkills}
           centerIcon={Globe}
-          colors={["#3b82f6", "#f59e0b", "#6b7280", "#f97316"]}
+          colors={["#3b82f6", "#8a2b03", "#6b7280", "#f97316"]}
         />
       </div>
     </div>

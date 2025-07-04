@@ -1,0 +1,126 @@
+/* Minimalistic Footer */
+.footer {
+  font-family: "Rationale", sans-serif;
+  background: #000;
+  color: #9ca3af;
+  padding: 32px 0;
+  border-top: 1px solid #1f2937;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nepali {
+  font-size: 1.2rem;
+  color: #ed4040c3;
+  font-weight: 400;
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.socialLink:hover {
+  border-color: rgba(215, 52, 66, 0.8);
+  color: rgba(215, 52, 66, 0.8);
+  background: rgba(215, 52, 66, 0.1);
+  transform: translateY(-2px);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.scrollTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.scrollTop:hover {
+  border-color: rgba(215, 52, 66, 0.8);
+  color: rgba(215, 52, 66, 0.8);
+  background: rgba(215, 52, 66, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .social {
+    gap: 12px;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer {
+    padding: 24px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}

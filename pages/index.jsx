@@ -10,11 +10,16 @@ import {
   Camera,
   Zap,
   Play,
-  Pause
+  Pause,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Mail
 } from "lucide-react";
 import { MdOutlineSportsMartialArts } from "react-icons/md";
 import MyJourney from "../components/MyJourney";
 import MyArsenal from "../components/MyArsenal";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
@@ -256,6 +261,38 @@ export default function Home() {
                         className={styles.profileImage}
                       />
                     </div>
+
+                    {/* Social Icons */}
+                    <div className={styles.socialIcons}>
+                      <a
+                        href="#"
+                        className={styles.socialIcon}
+                        aria-label="Instagram"
+                      >
+                        <Instagram size={20} />
+                      </a>
+                      <a
+                        href="#"
+                        className={styles.socialIcon}
+                        aria-label="LinkedIn"
+                      >
+                        <Linkedin size={20} />
+                      </a>
+                      <a
+                        href="#"
+                        className={styles.socialIcon}
+                        aria-label="YouTube"
+                      >
+                        <Youtube size={20} />
+                      </a>
+                      <a
+                        href="#"
+                        className={styles.socialIcon}
+                        aria-label="Email"
+                      >
+                        <Mail size={20} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -274,9 +311,7 @@ export default function Home() {
               animationEnabled ? styles.fadeIn : ""
             }`}
           >
-            <div className={styles.scrollIndicatorContainer}>
-              <div className={styles.scrollIndicatorDot}></div>
-            </div>
+            
           </div>
         )}
 
@@ -285,6 +320,7 @@ export default function Home() {
           <>
             <MyJourney />
             <MyArsenal />
+            <Footer />
           </>
         ) : null}
       </div>

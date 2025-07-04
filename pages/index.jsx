@@ -10,13 +10,11 @@ import {
   Camera,
   Zap,
   Play,
-  Pause,
-  Instagram,
-  Linkedin,
-  Youtube,
-  Mail
+  Pause
 } from "lucide-react";
 import { MdOutlineSportsMartialArts } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 import MyJourney from "../components/MyJourney";
 import MyArsenal from "../components/MyArsenal";
 import Footer from "../components/Footer";
@@ -267,30 +265,37 @@ export default function Home() {
                       <a
                         href="#"
                         className={styles.socialIcon}
-                        aria-label="Instagram"
+                        aria-label="GitHub"
                       >
-                        <Instagram size={20} />
+                        <FaGithub size={20} />
                       </a>
                       <a
                         href="#"
                         className={styles.socialIcon}
                         aria-label="LinkedIn"
                       >
-                        <Linkedin size={20} />
-                      </a>
-                      <a
-                        href="#"
-                        className={styles.socialIcon}
-                        aria-label="YouTube"
-                      >
-                        <Youtube size={20} />
+                        <FaLinkedin size={20} />
                       </a>
                       <a
                         href="#"
                         className={styles.socialIcon}
                         aria-label="Email"
                       >
-                        <Mail size={20} />
+                        <HiMail size={20} />
+                      </a>
+                      <a
+                        href="#"
+                        className={styles.socialIcon}
+                        aria-label="YouTube"
+                      >
+                        <FaYoutube size={20} />
+                      </a>
+                      <a
+                        href="#"
+                        className={styles.socialIcon}
+                        aria-label="Instagram"
+                      >
+                        <FaInstagram size={20} />
                       </a>
                     </div>
                   </div>
@@ -310,9 +315,7 @@ export default function Home() {
             className={`${styles.scrollIndicator} ${
               animationEnabled ? styles.fadeIn : ""
             }`}
-          >
-            
-          </div>
+          ></div>
         )}
 
         {/* MyJourney Component - Only show after animation complete */}

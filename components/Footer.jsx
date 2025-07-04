@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  Mail,
-  ArrowUp,
-  Github,
-  Linkedin,
-  Youtube,
-  Instagram
-} from "lucide-react";
+// React Icons - most popular and well-maintained icon library
+import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
+import { HiMail, HiArrowUp } from "react-icons/hi";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -30,36 +25,48 @@ const Footer = () => {
             <a
               href="https://github.com/yourprofile"
               className={styles.socialLink}
+              aria-label="GitHub Profile"
             >
-              <Github size={18} />
+              <FaGithub size={18} />
             </a>
             <a
               href="https://linkedin.com/in/yourprofile"
               className={styles.socialLink}
+              aria-label="LinkedIn Profile"
             >
-              <Linkedin size={18} />
+              <FaLinkedin size={18} />
             </a>
-            <a href="mailto:hello@aaradhya.dev" className={styles.socialLink}>
-              <Mail size={18} />
+            <a
+              href="mailto:hello@aaradhya.dev"
+              className={styles.socialLink}
+              aria-label="Email Contact"
+            >
+              <HiMail size={18} />
             </a>
             <a
               href="https://youtube.com/@yourprofile"
               className={styles.socialLink}
+              aria-label="YouTube Channel"
             >
-              <Youtube size={18} />
+              <FaYoutube size={18} />
             </a>
             <a
               href="https://instagram.com/yourprofile"
               className={styles.socialLink}
+              aria-label="Instagram Profile"
             >
-              <Instagram size={18} />
+              <FaInstagram size={18} />
             </a>
           </div>
 
           <div className={styles.actions}>
             <span className={styles.copyright}>© 2025 Aaradhya</span>
-            <button onClick={scrollToTop} className={styles.scrollTop}>
-              <ArrowUp size={16} />
+            <button
+              onClick={scrollToTop}
+              className={styles.scrollTop}
+              aria-label="Scroll to top"
+            >
+              <HiArrowUp size={16} />
             </button>
           </div>
         </div>

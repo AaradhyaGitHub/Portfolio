@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import styles from "./MyArsenal.module.css";
 import Donut from "./Donut";
+import FancyButton from "./FancyButton";
 
 export default function MyArsenal() {
   const frontEndSkills = [
@@ -96,11 +97,12 @@ export default function MyArsenal() {
       <div className={styles.header}>
         <h1 className={styles.mainTitle}>What I Can Do</h1>
         <p className={styles.buttonContainer}>
-          <button className={styles.button}>
-            <ChevronsRight />
+          <FancyButton
+            leftIcon={<ChevronsRight />}
+            rightIcon={<ChevronsLeft />}
+          >
             View Projects
-            <ChevronsLeft />
-          </button>
+          </FancyButton>
         </p>
       </div>
 

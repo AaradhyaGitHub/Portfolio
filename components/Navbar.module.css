@@ -41,58 +41,29 @@
   position: relative;
   transition: all 0.3s ease;
   white-space: nowrap;
-
-  padding:5px;
+  padding: 5px;
 }
 
-/* Animated Border Rectangle Effect */
-.navItems a::before,
-.navItems a::after {
-  content: "";
-  position: absolute;
-  background-color: rgb(215, 52, 66, 0.52);
-  opacity: 0;
+/* Active State - Rounded corner box with darker background */
+.navItems a.active {
+  background-color: rgba(50, 50, 50, 0.8);
+  border: 1.5px solid rgb(215, 52, 66, 0.52);
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
 }
 
-/* Bottom border */
-.navItems a::before {
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  transition-delay: 0s;
-}
-
-/* Right border */
-.navItems a::after {
-  right: 0;
-  bottom: 0;
-  width: 1.5px;
-  height: 0;
-  transition-delay: 0.15s;
-}
-
-/* Hover Animation - Sequential border drawing */
-.navItems a:hover::before {
-  width: 100%;
-  opacity: 1;
-}
-
-.navItems a:hover::after {
-  height: 100%;
-  opacity: 1;
-}
-
-/* Top and Left borders using box-shadow with proper overlap */
-.navItems a:hover {
-  box-shadow: 0 -1.5px 0 0 rgb(215, 52, 66, 0.52),
-    /* top border */ -1.5px 0 0 0 rgb(215, 52, 66, 0.52),
-    /* left border */ -1.5px -1.5px 0 0 rgb(215, 52, 66, 0.52); /* top-left corner fill */
-  transition: box-shadow 0.3s ease 0.3s; /* delayed to animate after right border */
-}
-
-/* Optional: change text color on hover */
-.navItems:hover a {
+/* Hover State - Rounded corner border outline (only for non-active items) */
+.navItems a:not(.active):hover {
+  border: 1.5px solid rgb(215, 52, 66, 0.52);
+  border-radius: 8px;
+  background-color: rgba(30, 30, 30, 0.3);
   color: rgb(157, 157, 158);
+  transition: all 0.3s ease;
+}
+
+/* Remove all the old animated border effects */
+.navItems a::before,
+.navItems a::after {
+  display: none;
 }

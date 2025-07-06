@@ -1,10 +1,12 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import styles from "./projects.module.css";
 import FancyButton from "../components/FancyButton";
 import { Sparkles, LaptopMinimal, Smartphone } from "lucide-react";
+import ProjectCard from "../components/ProjectCardComponents/ProjectCard";
 
 export default function Projects() {
-  const [projectCategory, setProjectCategory] = useState("");
+  const [projectCategory, setProjectCategory] = useState("highlighted");
 
   function handleSelectCategory(buttonType) {
     if (buttonType === "highlighted") {
@@ -197,6 +199,49 @@ export default function Projects() {
     // Add specific projects you want to highlight from above arrays
   ];
 
+  const Highlighted = () => (
+    <>
+      <h1>This is highlighted Project</h1>
+    </>
+  );
+
+  const Web = () => (
+    <>
+      <h1>This is Web Project</h1>
+      {webProjects.map((project) => {
+        const projectBackstory = project.projectDetails.backstory;
+        const projecthowItWorks = project.projectDetails.howItWorks;
+        const projectKeyFeatures = project.projectDetails.keyFeatures.map(
+          (feature) => feature
+        );
+        return (
+          <ProjectCard
+            orientation={"web"}
+            image={
+              "https://media.istockphoto.com/id/1849448372/photo/funny-portrait-of-a-screaming-cow-showing-gums-teeth-and-tongue.jpg?s=612x612&w=0&k=20&c=7HTcnJ2oWFK35KLO4tl7gqY53F3CkdYCvNXbXrSWkm4="
+            }
+            title={project.title}
+            description={project.description}
+            technologies={project.description}
+            backStory={projectBackstory}
+            howItWorks={projecthowItWorks}
+            keyFeatures={projectKeyFeatures}
+            viewProjectLink={project.links.live}
+            viewGithubLink={project.links.github}
+            viewDemoLink={project.links.demo}
+          />
+        );
+      })}
+    </>
+  );
+
+  const Mobile = () => (
+    <>
+      <h1>This is Mobile Project</h1>
+      <ProjectCard />
+    </>
+  );
+
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.header}>Projects</h1>
@@ -204,20 +249,20 @@ export default function Projects() {
         <ul className={styles.navigationButtonsContainer}>
           <li className={styles.navigationItems}>
             <FancyButton
-              leftIcon={<Sparkles />}
-              rightIcon={<Sparkles />}
-              onClick={() => handleSelectCategory("highlighted")}
-            >
-              Highlighted
-            </FancyButton>
-          </li>
-          <li className={styles.navigationItems}>
-            <FancyButton
               leftIcon={<LaptopMinimal />}
               rightIcon={<LaptopMinimal />}
               onClick={() => handleSelectCategory("web")}
             >
               Web
+            </FancyButton>
+          </li>
+          <li className={styles.navigationItems}>
+            <FancyButton
+              leftIcon={<Sparkles />}
+              rightIcon={<Sparkles />}
+              onClick={() => handleSelectCategory("highlighted")}
+            >
+              Highlighted
             </FancyButton>
           </li>
           <li className={styles.navigationItems}>
@@ -230,6 +275,16 @@ export default function Projects() {
             </FancyButton>
           </li>
         </ul>
+      </div>
+
+      <div className={styles.projectSection}>
+        {projectCategory === "web" ? (
+          <Web />
+        ) : projectCategory === "highlighted" ? (
+          <Highlighted />
+        ) : projectCategory === "mobile" ? (
+          <Mobile />
+        ) : null}
       </div>
     </div>
   );

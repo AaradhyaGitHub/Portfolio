@@ -4,6 +4,15 @@ import webStyles from "./ProjectCardWeb.module.css";
 import mobileStyles from "./ProjectCardMobile.module.css";
 import highlightedStyles from "./ProjectCardHighlighted.module.css";
 
+import { FaInternetExplorer } from "react-icons/fa";
+import {
+  SquareX,
+  SquareMinus,
+  PanelTop,
+  FileSearch,
+  Search
+} from "lucide-react";
+
 export default function ProjectCard({
   orientation,
   image,
@@ -29,7 +38,38 @@ export default function ProjectCard({
   return (
     <>
       <div className={styles?.cardContainer}>
-        <h1 className={styles?.title}>{title}</h1>
+        {orientation === "web" ? (
+          <>
+            <div className={styles?.titleBar}>
+              <h1 className={styles?.title}>
+                <FaInternetExplorer size={24} />
+                {title}
+              </h1>
+              <div className={styles?.browserActions}>
+                <SquareMinus size={32} />
+                <PanelTop size={32} />
+                <SquareX size={32} color={"red"} />
+              </div>
+            </div>
+            <div className={styles?.searchContainer}>
+              <div className={styles?.searchBar}>
+                <p className={styles?.searchBarContent}>
+                  <FileSearch className={styles?.searchBarIcon} size={20} />
+                  <u>{viewProjectLink}</u>
+                </p>
+              </div>
+              <div className={styles?.searchButton}>
+                <p className={styles?.searchBarContent}>
+                  <Search className={styles?.searchBarIcon} size={20} />
+                  Visit
+                </p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <h1 className={styles?.title}>{title}</h1>
+        )}
+
         <img className={styles?.image} src={image} />
         <p className={styles?.description}>{description}</p>
         <ul className={styles?.techList}>

@@ -1,0 +1,111 @@
+.cardContainer {
+  width: 500px;
+  height: 800px;
+  background-color: rgba(255, 255, 255, 0.81);
+  color: black;
+  border-radius: 5px;
+}
+
+.titleBar {
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: space-between; /* title left, actions right */
+  background-color: #0033aa; /* old-school flat blue */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 0.1px solid white; /* white border for dated look */
+}
+
+.title {
+  font-family: "VT323", monospace; /* your retro pixel-y font */
+  color: white;
+  margin: 0; /* remove default h1 margin */
+  font-size: 1.5rem; /* keep sizing */
+  padding-left: 10px; /* old UI padding style */
+  letter-spacing: 1px; /* gives blocky terminal feel */
+}
+
+.title svg {
+  color: white;
+  padding-right: 5px;
+  padding-top: 6px;
+}
+
+.browserActions {
+  display: flex;
+  color: white;
+  margin-right: 2px; /* some space at the end */
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center; /* vertical align search bar + button */
+  gap: 8px; /* spacing between bar and button */
+  width: 100%; /* container takes full width of parent */
+  margin: 5px 3px; /* optional vertical spacing */
+  font-family: "VT323", monospace;
+}
+
+.searchBar {
+  border: 3px solid orange; /* ugly vintage orange border */
+  border-radius: 5px;
+  width: 78%; /* search bar takes 65% width */
+  background-color: #ffe4b5; /* a weird light brown-yellow bg */
+  padding: 1px 10px;
+  font-family: "VT323", monospace; /* old typewriter font */
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4); /* vintage depth */
+}
+
+.searchButton {
+  border: 3px solid orange; /* same ugly orange border */
+  border-radius: 5px;
+  padding: 1px 1px;
+  background-color: #ffe4b5bc; /* matching background */
+  cursor: pointer;
+  font-family: "VT323", monospace;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.searchBarContent {
+  font-family: "VT323", monospace;
+  display: flex;
+  font-size: 1.3rem;
+  align-items: center;
+  gap: 8px;
+  color: black;
+}
+
+.searchBarIcon {
+  flex-shrink: 0;
+  color: black;
+}
+
+.image {
+  height: 200px;
+  width: 300px;
+  border-radius: 20px;
+}
+.description {
+}
+.techList {
+}
+.techItems {
+}
+.projectDetails {
+}
+.projectBackStory {
+}
+.projectHowItWorks {
+}
+.keyFeatures {
+}
+.linkButtonsContainer {
+}
+.linksHeader {
+}
+.linkLists {
+}
+.linkItems {
+}
+.linkButton {
+}

@@ -27,7 +27,8 @@ export default function Projects() {
   const webProjects = [
     {
       title: "mooSpots",
-      image: "",
+      image:
+        "https://media.istockphoto.com/id/1849448372/photo/funny-portrait-of-a-screaming-cow-showing-gums-teeth-and-tongue.jpg?s=612x612&w=0&k=20&c=7HTcnJ2oWFK35KLO4tl7gqY53F3CkdYCvNXbXrSWkm4=",
       description:
         "A location-based web app that helps UC Davis students find the closest available bike parking spots using real-time geolocation and navigation integration.",
       technologies: {
@@ -58,7 +59,8 @@ export default function Projects() {
     },
     {
       title: "FullStackFactory",
-      image: "",
+      image:
+        "https://www.navvis.com/hs-fs/hubfs/navvis-factory-planning2-image1.jpg?width=1200&name=navvis-factory-planning2-image1.jpg",
       description:
         "An educational platform designed for early tech learners to reinforce their knowledge by writing and sharing technical articles with real-world code implementations.",
       technologies: {
@@ -90,7 +92,8 @@ export default function Projects() {
     },
     {
       title: "Photographer Portfolio",
-      image: "",
+      image:
+        "https://www.thelondoneconomic.com/uploads/2017/11/thats-nuts-chee-63411.jpg?height=833&width=1200",
       description:
         "A dynamic photography portfolio featuring Pinterest-style masonry layouts, intelligent image orientation detection, and CDN optimization for fast loading.",
       technologies: {
@@ -126,7 +129,8 @@ export default function Projects() {
   const mobileProjects = [
     {
       title: "FlowBook",
-      image: "",
+      image:
+        "https://ih1.redbubble.net/image.2036961673.7005/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
       description:
         "A React Native app for Brazilian Jiu Jitsu athletes to quickly log sparring performance through interactive questionnaires and track progress with comprehensive analytics.",
       technologies: {
@@ -160,7 +164,8 @@ export default function Projects() {
     },
     {
       title: "PickZickle",
-      image: "",
+      image:
+        "https://c8.alamy.com/comp/KE05D3/dog-taking-pictures-with-a-fancy-photo-camera-KE05D3.jpg",
       description:
         "A photography-centered mobile app that allows photographers to discover, document, and share prime photo locations with precise geolocation mapping.",
       technologies: {
@@ -207,7 +212,6 @@ export default function Projects() {
 
   const Web = () => (
     <>
-      <h1>This is Web Project</h1>
       {webProjects.map((project) => {
         const projectBackstory = project.projectDetails.backstory;
         const projecthowItWorks = project.projectDetails.howItWorks;
@@ -217,9 +221,7 @@ export default function Projects() {
         return (
           <ProjectCard
             orientation={"web"}
-            image={
-              "https://media.istockphoto.com/id/1849448372/photo/funny-portrait-of-a-screaming-cow-showing-gums-teeth-and-tongue.jpg?s=612x612&w=0&k=20&c=7HTcnJ2oWFK35KLO4tl7gqY53F3CkdYCvNXbXrSWkm4="
-            }
+            image={project.image}
             title={project.title}
             description={project.description}
             technologies={project.description}
@@ -238,7 +240,28 @@ export default function Projects() {
   const Mobile = () => (
     <>
       <h1>This is Mobile Project</h1>
-      <ProjectCard />
+      {mobileProjects.map((project) => {
+        const projectBackstory = project.projectDetails.backstory;
+        const projecthowItWorks = project.projectDetails.howItWorks;
+        const projectKeyFeatures = project.projectDetails.keyFeatures.map(
+          (feature) => feature
+        );
+        return (
+          <ProjectCard
+            orientation={"mobile"}
+            image={project.image}
+            title={project.title}
+            description={project.description}
+            technologies={project.description}
+            backStory={projectBackstory}
+            howItWorks={projecthowItWorks}
+            keyFeatures={projectKeyFeatures}
+            viewProjectLink={project.links.live}
+            viewGithubLink={project.links.github}
+            viewDemoLink={project.links.demo}
+          />
+        );
+      })}
     </>
   );
 

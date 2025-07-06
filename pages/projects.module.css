@@ -30,3 +30,9 @@
   padding: 0; /* Removes left indent */
   margin: 0; /* Removes default vertical spacing */
 }
+.projectSection{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  padding:40px;
+}

@@ -32,6 +32,11 @@ export default function Document() {
           rel="stylesheet"
         />
 
+        <link
+          href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+          rel="stylesheet"
+        />
+
         {/* Optional: Your global stylesheet if needed */}
         {/* <link rel="stylesheet" href="/styles/custom.css" /> */}
       </Head>

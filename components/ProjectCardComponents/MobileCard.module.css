@@ -1,0 +1,809 @@
+/* New wrapper for the entire component */
+.cardWrapper {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 45%;
+    margin: 0 35px;
+}
+
+/* Main title at the top */
+.mainTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 20px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #fafafa 0%, #0056b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
+}
+
+/* Main container for dual iPhone display */
+.cardContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    border-radius: 24px;
+    border: 2px solid rgba(135, 135, 135, 0.236);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+}
+
+/* iPhone Frames */
+.iPhone {
+    position: relative;
+    width: 20vw;
+    height: 42vw;
+    flex-shrink: 0;
+}
+
+.iPhoneDemo {
+    position: relative;
+    width: 20vw;
+    height: 42vw;
+    flex-shrink: 0;
+}
+
+.iPhoneFrame {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 32px;
+    padding: 3px;
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.iPhoneDemoFrame {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 32px;
+    padding: 3px;
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dynamic Island / Notch */
+.iPhoneFrame::before,
+.iPhoneDemoFrame::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: linear-gradient(145deg, #000 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Status Bar */
+.statusBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: transparent;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 20px;
+    z-index: 5;
+}
+
+.statusLeft {
+    display: flex;
+    align-items: center;
+}
+
+.time {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.statusRight {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.statusRight svg {
+    color: white;
+    width: 10px;
+    height: 10px;
+}
+
+/* Navigation Bar - More iOS-like */
+.navBar,
+.videoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+    margin: 0 6px;
+    border-radius: 0;
+    position: relative;
+}
+
+.navBar::after,
+.videoHeader::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.appTitle {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+    letter-spacing: -0.4px;
+}
+
+.navBar svg,
+.videoHeader svg {
+    color: #007aff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 18px;
+    height: 18px;
+}
+
+.navBar svg:hover,
+.videoHeader svg:hover {
+    transform: scale(1.05);
+    color: #0056b3;
+}
+
+/* Tab Navigation - More native iOS style */
+.tabNavigation {
+    display: flex;
+    background: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(20px);
+    margin: 0 6px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+    padding: 0 16px;
+}
+
+.tabBtn {
+    flex: 1;
+    padding: 12px 8px;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #8e8e93;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    text-align: center;
+}
+
+.tabBtn:hover {
+    color: #007aff;
+}
+
+.activeTabBtn {
+    color: #007aff !important;
+    font-weight: 600 !important;
+}
+
+.activeTabBtn::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background: #007aff;
+    border-radius: 1px;
+}
+
+/* Content Area - Dark mode iOS style */
+.contentArea {
+    flex: 1;
+    background: #000;
+    margin: 0 6px;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Overview Content - Mobile-first design */
+.overviewContent {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #000;
+}
+
+.heroSection {
+    padding: 16px;
+    background: #000;
+}
+
+.heroImageContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.heroImageContainer:hover .heroImage {
+    transform: scale(1.02);
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 16px;
+}
+
+.heroImageContainer:hover .heroOverlay {
+    opacity: 1;
+}
+
+.heroActions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.heroActionBtn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 20px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #000;
+    backdrop-filter: blur(10px);
+}
+
+.heroActionBtn:hover {
+    background: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.projectInfo {
+    background: #1c1c1e;
+    margin: 0 16px 16px 16px;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #2c2c2e;
+}
+
+.infoSection {
+    margin-bottom: 20px;
+}
+
+.infoTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.4px;
+}
+
+.infoDescription {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #aeaeb2;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.quickStats {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #2c2c2e;
+}
+
+.statItem {
+    text-align: center;
+    flex: 1;
+}
+
+.statNumber {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007aff;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.statLabel {
+    font-size: 13px;
+    color: #8e8e93;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+}
+
+/* Details Content - Card-based iOS style */
+.detailsContent {
+    padding: 16px;
+    background: #000;
+}
+
+.detailSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detailCard {
+    background: #1c1c1e;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #2c2c2e;
+    position: relative;
+    overflow: hidden;
+}
+
+.detailHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2c2c2e;
+}
+
+.detailIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.detailTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.detailList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detailListItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.bulletPoint {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #007aff;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.detailText {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #aeaeb2;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+/* Tech Content - Modern tag design */
+.techContent {
+    padding: 16px;
+    background: #000;
+}
+
+.techStack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.techCategory {
+    background: #1c1c1e;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #2c2c2e;
+    position: relative;
+    overflow: hidden;
+}
+
+.techCategoryTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2c2c2e;
+}
+
+.techItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.techItem {
+    background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: default;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    letter-spacing: -0.1px;
+}
+
+.techItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.techItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.4);
+}
+
+.techItem:hover::before {
+    left: 100%;
+}
+
+/* Video Container */
+.videoContainer {
+    flex: 1;
+    background: #000;
+    margin: 0 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+}
+
+.videoFrame {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Home Button */
+.homeButton {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(44, 44, 46, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.homeButton:hover {
+    background: rgba(44, 44, 46, 0.9);
+    transform: translateX(-50%) scale(1.05);
+}
+
+.homeButtonInner {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.homeButton:hover .homeButtonInner {
+    opacity: 1;
+}
+
+/* Home Indicator */
+.homeIndicator {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2.5px;
+}
+
+/* Scrollbar Styling - iOS style */
+.contentArea::-webkit-scrollbar {
+    width: 3px;
+}
+
+.contentArea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.contentArea::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1.5px;
+}
+
+.contentArea::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .cardWrapper {
+        max-width: 70%;
+    }
+    
+    .mainTitle {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardWrapper {
+        max-width: 90%;
+    }
+    
+    .mainTitle {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+    }
+    
+    .cardContainer {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        align-items: center;
+    }
+
+    .iPhone,
+    .iPhoneDemo {
+        width: 240px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardWrapper {
+        max-width: 95%;
+    }
+    
+    .mainTitle {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .iPhone,
+    .iPhoneDemo {
+        width: 220px;
+        height: 440px;
+    }
+
+    .cardContainer {
+        padding: 12px;
+    }
+
+    .statusBar {
+        padding: 6px 12px;
+    }
+
+    .navBar,
+    .videoHeader {
+        padding: 12px;
+    }
+
+    .appTitle {
+        font-size: 15px;
+    }
+
+    .tabBtn {
+        font-size: 12px;
+        padding: 10px 6px;
+    }
+
+    .projectInfo {
+        padding: 16px;
+        margin: 0 12px 12px 12px;
+    }
+
+    .detailCard {
+        padding: 16px;
+    }
+
+    .techCategory {
+        padding: 16px;
+    }
+
+    .homeButton {
+        width: 32px;
+        height: 32px;
+        bottom: 6px;
+    }
+
+    .homeButton svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .videoContainer {
+        padding: 12px;
+    }
+
+    .homeIndicator {
+        width: 100px;
+        height: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .cardWrapper {
+        max-width: 100%;
+    }
+    
+    .mainTitle {
+        font-size: 1.3rem;
+    }
+    
+    .iPhone,
+    .iPhoneDemo {
+        width: 200px;
+        height: 400px;
+    }
+
+    .cardContainer {
+        padding: 10px;
+    }
+
+    .projectInfo {
+        padding: 14px;
+        margin: 0 10px 10px 10px;
+    }
+
+    .detailCard {
+        padding: 14px;
+    }
+
+    .techCategory {
+        padding: 14px;
+    }
+
+    .infoTitle {
+        font-size: 18px;
+    }
+
+    .detailTitle {
+        font-size: 16px;
+    }
+
+    .techCategoryTitle {
+        font-size: 14px;
+    }
+
+    .statNumber {
+        font-size: 20px;
+    }
+
+    .statLabel {
+        font-size: 12px;
+    }
+
+    .infoDescription {
+        font-size: 14px;
+    }
+
+    .detailText {
+        font-size: 14px;
+    }
+}

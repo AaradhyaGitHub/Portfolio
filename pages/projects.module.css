@@ -13,26 +13,36 @@
 
 .navigation {
   padding: 20px;
-  margin: 0 auto; /* This centers block elements horizontally */
+  margin: 0 auto;
   width: 50%;
 }
 
 .navigationButtonsContainer {
   margin: 0;
   padding: 0;
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 30px;
-
-  list-style: none; /* Removes bullets/numbers */
-  padding: 0; /* Removes left indent */
-  margin: 0; /* Removes default vertical spacing */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.projectSection{
+
+.projectSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 0px 40px;
+  
+  justify-content: center;
+  justify-items: center;
+}
+
+.mobileApps{
   display: flex;
   flex-direction: row;
-  gap:20px;
-  padding:40px;
+  align-items: center;
+  justify-content: center;
 }

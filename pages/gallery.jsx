@@ -1,15 +1,22 @@
-import { Outlet, useLocation } from "react-router-dom";
-import GalleryNav from "../components/Gallery/GalleryNav"
-import "./Gallery.css"; // Create this if it doesn't exist
+// @ts-nocheck
+"use client";
+
+import { useState } from "react";
+import GalleryNav from "../components/Gallery/GalleryNav";
+import GenreGrid from "../components/Gallery/GenreGrid";
+import styles from "./gallery.module.css";
 
 export default function Gallery() {
-  const location = useLocation();
-  const isMainGallery = location.pathname === "/gallery";
+  const [selectedGenre, setSelectedGenre] = useState("landscape");
+
   return (
-    <div className="gallery-container">
-      <GalleryNav />
-      <div className="gallery-content">
-        {isMainGallery ? <AnimatedGallery /> : <Outlet />}
+    <div className={styles.galleryContainer}>
+      <GalleryNav
+        selectedGenre={selectedGenre}
+        onGenreSelect={setSelectedGenre}
+      />
+      <div className={styles.galleryContent}>
+        <GenreGrid genre={selectedGenre} />
       </div>
     </div>
   );

@@ -1,59 +1,52 @@
-import { NavLink } from "react-router-dom";
-import classes from "./galleryNav.module.css";
+import classes from "./GalleryNav.module.css";
+import React from "react";
+export default function GalleryNav({ selectedGenre, onGenreSelect }) {
+  const handleClick = (e, genreId) => {
+    e.preventDefault();
+    onGenreSelect(genreId);
+  };
 
-export default function GalleryNav() {
   return (
     <nav className={classes.galleryNav}>
       <ul>
         <li>
-          <NavLink
-            to="/gallery/landscape"
-            className={({ isActive }) =>
-              isActive ? `${classes.genre} ${classes.active}` : classes.genre
+          <a
+            href="#"
+            onClick={(e) => handleClick(e, "street")}
+            className={
+              selectedGenre === "street"
+                ? `${classes.genre} ${classes.active}`
+                : classes.genre
             }
           >
-            LANDSCAPE
-          </NavLink>
+            STREET
+          </a>
         </li>
         <li>
-          <NavLink
-            to="/gallery/art"
-            className={({ isActive }) =>
-              isActive ? `${classes.genre} ${classes.active}` : classes.genre
+          <a
+            href="#"
+            onClick={(e) => handleClick(e, "animal")}
+            className={
+              selectedGenre === "animal"
+                ? `${classes.genre} ${classes.active}`
+                : classes.genre
             }
           >
-            ART
-          </NavLink>
+            ANIMALS
+          </a>
         </li>
         <li>
-          <NavLink
-            to="/gallery/portrait"
-            className={({ isActive }) =>
-              isActive ? `${classes.genre} ${classes.active}` : classes.genre
+          <a
+            href="#"
+            onClick={(e) => handleClick(e, "aerial")}
+            className={
+              selectedGenre === "aerial"
+                ? `${classes.genre} ${classes.active}`
+                : classes.genre
             }
           >
-            PORTRAITS
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/gallery/fashion"
-            className={({ isActive }) =>
-              isActive ? `${classes.genre} ${classes.active}` : classes.genre
-            }
-          >
-            FASHION
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/gallery/graduation"
-            className={({ isActive }) =>
-              isActive ? `${classes.genre} ${classes.active}` : classes.genre
-            }
-          >
-            GRADUATION
-          </NavLink>
+            AERIAL
+          </a>
         </li>
       </ul>
     </nav>

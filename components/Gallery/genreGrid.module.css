@@ -1,0 +1,114 @@
+.container {
+  width: 100%;
+  max-width: 2200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.masonryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 20px;
+  margin: 40px 0;
+  background: transparent;
+  padding: 30px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.masonryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(10px);
+}
+
+.imageWrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .masonryGrid {
+    gap: 18px;
+    padding: 25px;
+  }
+
+  .masonryColumn {
+    gap: 16px;
+  }
+
+  .container {
+    max-width: 1900px;
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .masonryGrid {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .masonryColumn {
+    gap: 14px;
+  }
+
+  .container {
+    max-width: 1600px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonryGrid {
+    gap: 14px;
+    padding: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  .masonryColumn {
+    gap: 12px;
+  }
+
+  .container {
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    margin-bottom: 12px;
+  }
+}

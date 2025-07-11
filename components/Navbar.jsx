@@ -34,7 +34,7 @@ export default function Navbar() {
               href="/gallery"
               className={isActive("/gallery") ? styles.active : ""}
             >
-              Gallery
+              Photography
             </Link>
           </li>
 

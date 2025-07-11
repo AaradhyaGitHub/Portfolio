@@ -45,7 +45,7 @@ export default function GalleryNav({ selectedGenre, onGenreSelect }) {
                 : classes.genre
             }
           >
-            AERIAL
+            DRONE
           </a>
         </li>
       </ul>

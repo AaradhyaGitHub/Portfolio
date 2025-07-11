@@ -46,3 +46,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.highlightedProjects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 0px 100px;
+  
+  justify-content: center;
+  justify-items: center;
+}

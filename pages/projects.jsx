@@ -10,6 +10,7 @@ import {
   mobileProjects,
   highlightedProjects
 } from "../data/projectData";
+import HighlightedCard from "../components/ProjectCardComponents/HighlightedCard";
 
 export default function Projects() {
   const [projectCategory, setProjectCategory] = useState("highlighted");
@@ -17,22 +18,47 @@ export default function Projects() {
   function handleSelectCategory(buttonType) {
     if (buttonType === "highlighted") {
       setProjectCategory("highlighted");
-      console.log("highlighted");
     } else if (buttonType === "web") {
       setProjectCategory("web");
-      console.log("web");
     } else if (buttonType === "mobile") {
       setProjectCategory("mobile");
-      console.log("mobile");
     } else {
-      console.log("error");
       return;
     }
   }
 
   const Highlighted = () => (
     <>
-      <h1>This is highlighted Project</h1>
+      {highlightedProjects.map((project) => {
+        const projectBackstory = project.projectDetails.backstory;
+        const projecthowItWorks = project.projectDetails.howItWorks;
+
+        const projectKeyFeatures = project.projectDetails.keyFeatures;
+        const projectTechnologiesArray = Object.entries(project.technologies);
+        const technologyCategory = projectTechnologiesArray.map(
+          (tech) => tech[0]
+        );
+        const technologyItems = projectTechnologiesArray.map((tech) =>
+          tech[1].map((techItem) => techItem)
+        );
+        return (
+          <HighlightedCard
+            type={project.type}
+            image={project.image}
+            title={project.title}
+            logo={project.logo}
+            description={project.description}
+            technologyCategory={technologyCategory}
+            technologyItems={technologyItems}
+            backStory={projectBackstory}
+            howItWorks={projecthowItWorks}
+            keyFeatures={projectKeyFeatures}
+            viewProjectLink={project.links.live}
+            viewGithubLink={project.links.github}
+            viewDemoLink={project.links.demo}
+          />
+        );
+      })}
     </>
   );
 
@@ -41,7 +67,6 @@ export default function Projects() {
       {webProjects.map((project) => {
         const projectBackstory = project.projectDetails.backstory;
         const projecthowItWorks = project.projectDetails.howItWorks;
-        console.log(projecthowItWorks);
 
         const projectKeyFeatures = project.projectDetails.keyFeatures;
         const projectTechnologiesArray = Object.entries(project.technologies);
@@ -131,6 +156,10 @@ export default function Projects() {
 
       <div className={styles.mobileApps}>
         {projectCategory === "mobile" && <Mobile />}
+      </div>
+
+      <div className={styles.highlightedProjects}>
+        {projectCategory === "highlighted" && <Highlighted />}
       </div>
     </div>
   );

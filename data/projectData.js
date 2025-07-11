@@ -196,5 +196,126 @@ export const mobileProjects = [
 ];
 
 export const highlightedProjects = [
-  // Add specific projects you want to highlight from above arrays
+  {
+    title: "FlowBook",
+    logo: "fight",
+    type: "mobile",
+    image:
+      "https://ih1.redbubble.net/image.2036961673.7005/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+    description:
+      "A React Native app for Brazilian Jiu Jitsu athletes to quickly log sparring performance through interactive questionnaires and track progress with comprehensive analytics.",
+    technologies: {
+      framework: ["React Native"],
+      navigation: ["React Navigation"],
+      backend: ["Firebase"],
+      stateManagement: ["Redux"],
+      storage: ["Cloud Storage"],
+      implementation: [
+        "Built with React Native for cross-platform compatibility, Firebase handles cloud data storage and user authentication, Redux manages local app state and data flow, React Navigation provides smooth screen transitions between Recent Spars, All Spars, and Dashboard views."
+      ]
+    },
+    projectDetails: {
+      backstory:
+        "I built FlowBook to help BJJ athletes capture sparring data quickly after training. Traditional tracking methods aren’t practical post-spar. FlowBook simplifies input and surfaces meaningful insights, helping athletes recognize patterns, track growth, and make smarter decisions without disrupting the intensity of training sessions.",
+      howItWorks: [
+        "Athletes complete quick interactive questionnaires using simple sliders and selections to log wins, losses, draws, and performance details.",
+        "The app generates comprehensive dashboards showing statistics, trends, and areas for improvement. All data is safely stored in the cloud via Firebase integration."
+      ],
+      keyFeatures: [
+        "Quick performance logging with sliders",
+        "Win/loss/draw statistics tracking",
+        "Comprehensive performance dashboard",
+        "Cloud data synchronization",
+        "Multiple screen navigation",
+        "Sweat-friendly interface design"
+      ]
+    },
+    links: {
+      live: "https://github.com",
+      github: "https://github.com",
+      demo: "https://youtube.com"
+    }
+  },
+  {
+    title: "FullStackFactory",
+    logo: "factory",
+    type: "web",
+    image:
+      "https://res.cloudinary.com/de3cxnkuw/image/upload/v1751777335/IMG_3920_zhoxul.jpg",
+    description:
+      "An educational platform designed for early tech learners to reinforce their knowledge by writing and sharing technical articles with real-world code implementations.",
+    technologies: {
+      frontend: ["HTML/CSS/JS", "React.js"],
+      routing: ["React Router"],
+      stateManagement: ["Context API"],
+      architecture: ["Single Page Application (SPA)"],
+      implementation: [
+        "Built with React.js using reusable components including a navbar that doubles as a sidebar. Implements SPA architecture for seamless navigation. Dynamic React forms handle article creation and rendering, replicating Khan Academy's workflow for content organization and display."
+      ]
+    },
+    projectDetails: {
+      backstory:
+        "Inspired by React’s modular design, I created a platform where beginners build and understand core frontend patterns. While self-learning, I noticed shared concepts like forms, maps, and dynamic rendering. This project simplifies those ideas into reusable pieces learners can combine to build real apps.",
+      howItWorks: [
+        "The platform mirrors Khan Academy’s structure with categories, units, lessons, and articles.",
+        "Users choose or create a category for their article.",
+        "Dynamic React forms enable writing and publishing articles with real code examples.",
+        "Content is organized into clear sections to aid understanding.",
+        "Each unit page is a component rendering categories in interactive cards.",
+        "The UnitsPage component dynamically loads data using URL parameters to display the right unit content.",
+        "The Article component uses a form to save new articles to the database.",
+        "All features are built as isolated React components, demonstrating the modular, assembly-line style of modern web development."
+      ],
+      keyFeatures: [
+        "Dynamic article creation forms",
+        "Organized content sections",
+        "Real-world code implementation examples",
+        "Uniform component architecture",
+        "Educational content sharing"
+      ]
+    },
+    links: {
+      live: "https://github.com",
+      github: "https://github.com",
+      demo: "https://youtube.com"
+    }
+  },
+  {
+    title: "mooSpots",
+    logo: "cow",
+    type: "web",
+    image:
+      "https://res.cloudinary.com/de3cxnkuw/image/upload/v1751776801/Screenshot_2025-07-05_at_9.36.29_PM_u2gfdn.jpg",
+    description:
+      "A location-based web app that helps UC Davis students find the closest available bike parking spots using real-time geolocation and navigation integration.",
+    technologies: {
+      frontend: ["HTML/CSS/JS", "React.js"],
+      stateManagement: ["Context API"],
+      algorithms: ["Haversine Formula"],
+      integration: ["Google Maps API", "Geolocation API"],
+      implementation: [
+        "Built with React.js for component-based architecture, Context API manages global state for bike rack data, Haversine Formula calculates distances between user location and parking spots, Google Maps integration provides turn-by-turn navigation from current location to selected parking spot."
+      ]
+    },
+    projectDetails: {
+      backstory:
+        "mooSpots helps UC Davis students find nearby bike parking using real-time rack data. With 20,000 bikes on campus daily, parking is a daily frustration. I built it after discovering a public dataset, aiming to save students time when every minute before class counts.",
+      howItWorks: [
+        "Users can view their current location and see the 6 closest bike racks sorted by distance.",
+        "The app uses the Haversine Formula to calculate precise distances from a database of all UC Davis bike racks",
+        "Custom-designed logos and components provide clear visual indicators for different parking spot types and availability."
+      ],
+      keyFeatures: [
+        "Real-time geolocation tracking",
+        "Distance-based sorting of parking spots",
+        "One-click navigation to Google Maps",
+        "Custom UI components with intuitive iconography"
+      ]
+    },
+    links: {
+      live: "https://github.com",
+      github: "https://github.com",
+      demo: "https://youtube.com"
+    }
+  }
 ];

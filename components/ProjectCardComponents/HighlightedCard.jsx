@@ -9,7 +9,9 @@ import {
   CornerDownRight,
   ArrowLeft,
   Laptop,
-  Smartphone
+  Smartphone,
+  Wrench,
+  Zap
 } from "lucide-react";
 
 // Icon map
@@ -29,6 +31,8 @@ export default function HighlightedCard({
   image,
   title,
   description,
+  technologyCategory,
+  technologyItems,
   technologies,
   backStory,
   howItWorks,
@@ -116,18 +120,52 @@ export default function HighlightedCard({
 
           <div className={styles.detailsContent}>
             <div className={styles.detailSection}>
-              <h4 className={styles.detailTitle}>Technologies</h4>
-              <p className={styles.detailText}>{technologies}</p>
+              <div className={styles.sectionHeader}>
+                <Wrench size={20} className={styles.sectionIcon} />
+                <h4 className={styles.detailTitle}>Technologies</h4>
+              </div>
+              <div className={styles.techContainer}>
+                {technologyCategory.map((techCategory, index) => (
+                  <div key={index} className={styles.techCategory}>
+                    <h5 className={styles.techCategoryTitle}>{techCategory}:</h5>
+                    <div className={styles.techItems}>
+                      {technologyItems[index].map((tech, techIndex) => (
+                        <span key={techIndex} className={styles.techItem}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                {technologies && (
+                  <div className={styles.additionalTech}>
+                    <p className={styles.detailText}>{technologies}</p>
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className={styles.detailSection}>
-              <h4 className={styles.detailTitle}>How It Works</h4>
-              <p className={styles.detailText}>{howItWorks}</p>
+              <div className={styles.sectionHeader}>
+                <Zap size={20} className={styles.sectionIcon} />
+                <h4 className={styles.detailTitle}>How It Works</h4>
+              </div>
+              <div className={styles.howItWorksContainer}>
+                <p className={styles.detailText}>{howItWorks}</p>
+              </div>
             </div>
 
             <div className={styles.detailSection}>
-              <h4 className={styles.detailTitle}>Key Features</h4>
-              <p className={styles.detailText}>{keyFeatures}</p>
+              <div className={styles.sectionHeader}>
+                <h4 className={styles.detailTitle}>Key Features</h4>
+              </div>
+              <div className={styles.keyFeaturesContainer}>
+                {keyFeatures.map((feature, index) => (
+                  <div key={index} className={styles.featureItem}>
+                    <p className={styles.detailText}>{feature}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

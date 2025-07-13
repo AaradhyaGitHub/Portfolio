@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useState } from "react";
+import React from "react";
 import styles from "./WebCard.module.css";
 
 import { FaInternetExplorer } from "react-icons/fa";
@@ -13,15 +13,11 @@ import {
   Play,
   Folder,
   Settings,
-  FileText,
-  ArrowLeft,
-  ArrowRight,
-  Square,
-  RotateCcw,
-  Home
+  FileText
 } from "lucide-react";
 
 export default function WebCard({
+  projectId,
   image,
   title,
   description,
@@ -32,12 +28,12 @@ export default function WebCard({
   keyFeatures,
   viewProjectLink,
   viewGithubLink,
-  viewDemoLink
+  viewDemoLink,
+  activeTab,
+  onTabChange
 }) {
-  const [activeTab, setActiveTab] = useState("overview");
-
   const handleTabClick = (tab) => {
-    setActiveTab(tab);
+    onTabChange(projectId, tab);
   };
 
   const renderOverviewTab = () => (
@@ -49,19 +45,19 @@ export default function WebCard({
             <div className={styles?.heroActions}>
               {viewProjectLink && (
                 <button className={styles?.heroActionBtn}>
-                  <ExternalLink size={16} />
+                  <ExternalLink size={14} />
                   Live Site
                 </button>
               )}
               {viewGithubLink && (
                 <button className={styles?.heroActionBtn}>
-                  <Github size={16} />
+                  <Github size={14} />
                   Source
                 </button>
               )}
               {viewDemoLink && (
                 <button className={styles?.heroActionBtn}>
-                  <Play size={16} />
+                  <Play size={14} />
                   Demo
                 </button>
               )}
@@ -84,13 +80,13 @@ export default function WebCard({
         <div className={styles?.programWindow}>
           <div className={styles?.windowTitleBar}>
             <div className={styles?.windowTitle}>
-              <Folder size={20} />
+              <Folder size={16} />
               Project Background
             </div>
             <div className={styles?.windowControls}>
-              <SquareMinus size={14} />
-              <PanelTop size={14} />
-              <SquareX size={14} />
+              <SquareMinus size={12} />
+              <PanelTop size={12} />
+              <SquareX size={12} />
             </div>
           </div>
           <div className={styles?.windowContent}>
@@ -101,13 +97,13 @@ export default function WebCard({
         <div className={styles?.programWindow}>
           <div className={styles?.windowTitleBar}>
             <div className={styles?.windowTitle}>
-              <Settings size={20} />
+              <Settings size={16} />
               How It Works
             </div>
             <div className={styles?.windowControls}>
-              <SquareMinus size={14} />
-              <PanelTop size={14} />
-              <SquareX size={14} />
+              <SquareMinus size={12} />
+              <PanelTop size={12} />
+              <SquareX size={12} />
             </div>
           </div>
           <div className={styles?.windowContent}>
@@ -122,20 +118,19 @@ export default function WebCard({
         <div className={styles?.programWindow}>
           <div className={styles?.windowTitleBar}>
             <div className={styles?.windowTitle}>
-              <FileText size={20} />
+              <FileText size={16} />
               Key Features
             </div>
             <div className={styles?.windowControls}>
-              <SquareMinus size={14} />
-              <PanelTop size={14} />
-              <SquareX size={14} />
+              <SquareMinus size={12} />
+              <PanelTop size={12} />
+              <SquareX size={12} />
             </div>
           </div>
           <div className={styles?.windowContent}>
             <ul>
               {keyFeatures.map((feature, index) => (
                 <p key={index} className={styles?.windowContextDescription}>
-                  {" "}
                   - {feature}
                 </p>
               ))}
@@ -169,51 +164,20 @@ export default function WebCard({
     <div className={styles?.cardContainer}>
       <div className={styles?.titleBar}>
         <div className={styles?.titleSection}>
-          <FaInternetExplorer size={16} />
+          <FaInternetExplorer size={14} />
           <span className={styles?.title}>
             {title} - Microsoft Internet Explorer
           </span>
         </div>
         <div className={styles?.browserActions}>
           <button className={styles?.windowBtn}>
-            <SquareMinus size={16} />
+            <SquareMinus size={14} />
           </button>
           <button className={styles?.windowBtn}>
-            <PanelTop size={16} />
+            <PanelTop size={14} />
           </button>
           <button className={styles?.windowBtn}>
-            <SquareX size={16} />
-          </button>
-        </div>
-      </div>
-
-      <div className={styles?.menuBar}>
-        <div className={styles?.menuItems}>
-          <span className={styles?.menuItem}>File</span>
-          <span className={styles?.menuItem}>Edit</span>
-          <span className={styles?.menuItem}>View</span>
-          <span className={styles?.menuItem}>Favorites</span>
-          <span className={styles?.menuItem}>Tools</span>
-          <span className={styles?.menuItem}>Help</span>
-        </div>
-      </div>
-
-      <div className={styles?.toolbar}>
-        <div className={styles?.toolbarButtons}>
-          <button className={styles?.toolBtn}>
-            <ArrowLeft size={18} color={"blue"} />
-          </button>
-          <button className={styles?.toolBtn}>
-            <ArrowRight size={18} color={"blue"} />
-          </button>
-          <button className={styles?.toolBtn}>
-            <Square size={18} color={"red"} />
-          </button>
-          <button className={styles?.toolBtn}>
-            <RotateCcw size={18} color={"orange"} />
-          </button>
-          <button className={styles?.toolBtn}>
-            <Home size={18} color={"green"} />
+            <SquareX size={14} />
           </button>
         </div>
       </div>
@@ -221,7 +185,7 @@ export default function WebCard({
       <div className={styles?.addressBar}>
         <div className={styles?.addressLabel}>Address</div>
         <div className={styles?.addressInput}>
-          <FileSearch className={styles?.addressIcon} size={16} />
+          <FileSearch className={styles?.addressIcon} size={14} />
           <span className={styles?.addressText}>
             https://projects.portfolio.com/
             {title.toLowerCase().replace(/\s+/g, "-")}

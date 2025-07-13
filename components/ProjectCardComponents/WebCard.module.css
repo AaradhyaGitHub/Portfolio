@@ -1,11 +1,10 @@
 /* Main container with enhanced retro-modern styling */
 .cardContainer {
   width: 100%;
-  max-width: 900px;
-  height: 650px;
+  max-width: 650px;
+  height: 420px;
   background-color: #ece9d8;
   border: 2px outset #ece9d8;
-  /* font-family: "MS Sans Serif", sans-serif; */
   font-size: 11px;
   overflow: hidden;
   display: flex;
@@ -34,8 +33,8 @@
     #0a246a 100%
   );
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  height: 22px;
-  padding: 2px 6px;
+  height: 18px;
+  padding: 1px 4px;
   flex-shrink: 0;
   position: relative;
 }
@@ -53,12 +52,12 @@
 .titleSection {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
 }
 
 .title {
   color: white;
-  font-size: 11px;
+  font-size: 9px;
   font-weight: bold;
   margin: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
@@ -67,19 +66,19 @@
 
 .browserActions {
   display: flex;
-  gap: 3px;
+  gap: 2px;
 }
 
 .windowBtn {
-  width: 18px;
-  height: 16px;
+  width: 14px;
+  height: 12px;
   background: linear-gradient(180deg, #f8f8f8 0%, #d8d8d8 100%);
   border: 1px outset #d4d4d4;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 8px;
   padding: 0;
   border-radius: 1px;
   transition: all 0.1s ease;
@@ -95,96 +94,21 @@
   transform: translateY(1px);
 }
 
-/* Enhanced menu bar */
-.menuBar {
-  background: linear-gradient(180deg, #f0f0f0 0%, #e4e4e4 100%);
-  border-bottom: 1px solid #a0a0a0;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  padding: 0 6px;
-  flex-shrink: 0;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
-}
-
-.menuItems {
-  display: flex;
-  gap: 16px;
-  color: black;
-}
-
-.menuItem {
-  font-size: 11px;
-  padding: 3px 8px;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: all 0.15s ease;
-  font-weight: 500;
-}
-
-.menuItem:hover {
-  background: linear-gradient(180deg, #b6bdd2 0%, #9ca3b8 100%);
-  border: 1px solid #000000;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Enhanced toolbar */
-.toolbar {
-  background: linear-gradient(180deg, #f0f0f0 0%, #e4e4e4 100%);
-  border-bottom: 1px solid #a0a0a0;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  padding: 0 6px;
-  flex-shrink: 0;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
-}
-
-.toolbarButtons {
-  display: flex;
-  gap: 4px;
-}
-
-.toolBtn {
-  background: linear-gradient(180deg, #f8f8f8 0%, #e0e0e0 100%);
-  border: 1px outset #d4d4d4;
-  padding: 3px 10px;
-  font-size: 10px;
-  cursor: pointer;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  border-radius: 2px;
-  transition: all 0.1s ease;
-  font-weight: 500;
-}
-
-.toolBtn:hover {
-  background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 100%);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.toolBtn:active {
-  border: 1px inset #d4d4d4;
-  transform: translateY(1px);
-}
-
 /* Enhanced address bar */
 .addressBar {
   display: flex;
   align-items: center;
   background: linear-gradient(180deg, #f0f0f0 0%, #e4e4e4 100%);
   border-bottom: 1px solid #a0a0a0;
-  padding: 4px 6px;
-  gap: 6px;
-  height: 24px;
+  padding: 2px 4px;
+  gap: 3px;
+  height: 18px;
   flex-shrink: 0;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
 }
 
 .addressLabel {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: bold;
   color: #000;
   white-space: nowrap;
@@ -194,13 +118,13 @@
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
   background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
   border: 1px inset #d4d4d4;
-  padding: 2px 6px;
-  font-size: 11px;
+  padding: 1px 3px;
+  font-size: 9px;
   min-width: 0;
-  height: 18px;
+  height: 14px;
   border-radius: 1px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
@@ -208,8 +132,8 @@
 .addressIcon {
   flex-shrink: 0;
   color: #666;
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
 }
 
 .addressText {
@@ -217,16 +141,16 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 11px;
+  font-size: 9px;
 }
 
 .goButton {
   background: linear-gradient(180deg, #f8f8f8 0%, #e0e0e0 100%);
   border: 1px outset #d4d4d4;
-  padding: 2px 12px;
+  padding: 1px 6px;
   cursor: pointer;
-  font-size: 11px;
-  height: 20px;
+  font-size: 9px;
+  height: 16px;
   display: flex;
   align-items: center;
   border-radius: 2px;
@@ -250,28 +174,27 @@
   background: linear-gradient(180deg, #f0f0f0 0%, #e4e4e4 100%);
   border-bottom: 1px solid #a0a0a0;
   flex-shrink: 0;
-  padding: 3px 6px 0 6px;
+  padding: 2px 4px 0 4px;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
 }
 
 .tab {
   display: flex;
   align-items: center;
-  padding: 5px 18px;
-  margin-right: 3px;
+  padding: 3px 10px;
+  margin-right: 2px;
   cursor: pointer;
   color: rgb(0, 0, 0);
-  font-size: 0.8rem;
+  font-size: 0.65rem;
   background-color: rgba(231, 158, 24, 0.499);
-  /* background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 50%, #c0c0c0 100%); */
   border: 1px solid #a0a0a0;
   border-bottom: none;
-  border-radius: 6px 6px 0 0;
+  border-radius: 3px 3px 0 0;
   position: relative;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-weight: 500;
-  min-width: 85px;
+  min-width: 60px;
   justify-content: center;
 }
 
@@ -331,10 +254,10 @@
 
 /* Enhanced overview tab content */
 .overviewContent {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
   background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
 }
 
@@ -347,11 +270,11 @@
 .heroImageContainer {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 320px;
   aspect-ratio: 16/9;
-  border-radius: 6px;
+  border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25),
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   border: 2px solid #d4d4d4;
 }
@@ -385,7 +308,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 16px;
+  padding: 10px;
 }
 
 .heroImageContainer:hover .heroOverlay {
@@ -394,18 +317,18 @@
 
 .heroActions {
   display: flex;
-  gap: 8px;
+  gap: 5px;
 }
 
 .heroActionBtn {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
   background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
   border: 1px outset #d4d4d4;
-  border-radius: 3px;
-  padding: 8px 14px;
-  font-size: 11px;
+  border-radius: 2px;
+  padding: 4px 8px;
+  font-size: 9px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
@@ -427,28 +350,29 @@
 .projectInfo {
   background: linear-gradient(180deg, #f8f8f8 0%, #f0f0f0 100%);
   border: 1px solid #d4d4d4;
-  border-radius: 4px;
-  padding: 18px;
+  border-radius: 3px;
+  padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  flex: 1;
 }
 
 .infoSection {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .infoTitle {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #0066cc;
-  margin: 0 0 10px 0;
+  margin: 0 0 6px 0;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
+  padding-bottom: 3px;
 }
 
 .infoDescription {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  line-height: 1.3;
   color: #333;
   margin: 0;
 }
@@ -458,7 +382,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 12px;
+  padding: 8px;
   overflow-y: auto;
   background-color: black;
 }
@@ -479,10 +403,9 @@
 }
 
 .windowsDesktop {
-  
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
   height: 100%;
   position: relative;
   z-index: 1;
@@ -491,9 +414,9 @@
 .programWindow {
   background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%);
   border: 1px outset #e0e0e0;
-  border-radius: 8px 8px 0 0;
-  min-height: 150px;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25),
+  border-radius: 4px 4px 0 0;
+  min-height: 100px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.8) inset;
   display: flex;
   flex-direction: column;
@@ -516,9 +439,9 @@
     #262626 90%,
     #0a246a 100%
   );
-  padding: 5px 10px;
-  height: 24px;
-  border-radius: 8px 8px 0 0;
+  padding: 2px 6px;
+  height: 18px;
+  border-radius: 4px 4px 0 0;
   position: relative;
 }
 
@@ -535,21 +458,21 @@
 .windowTitle {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   color: rgb(255, 255, 255);
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .windowControls {
   display: flex;
-  gap: 3px;
+  gap: 2px;
 }
 
 .windowControls svg {
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   color: white;
   cursor: pointer;
   transition: all 0.1s ease;
@@ -565,7 +488,6 @@
   padding: 5px;
   background-color: rgba(161, 160, 160, 0.431);
   border: 1px inset #e0e0e0;
-
   color: #000000;
   overflow-y: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) inset;
@@ -573,14 +495,15 @@
 
 .windowContextDescription {
   font-family: "VT323", monospace;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   line-height: 1.1;
+  margin: 2px 0;
 }
 
-/* Enhanced tech stack tab content - keeping retro feel */
+/* Enhanced tech stack tab content */
 .techContent {
   position: relative;
-  padding: 20px;
+  padding: 10px;
   height: 100%;
   overflow-y: auto;
   background-color: rgb(200, 200, 200);
@@ -600,51 +523,49 @@
 .techStack {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
   position: relative;
   z-index: 1;
 }
 
 .techCategory {
-  padding: 16px;
+  padding: 10px;
   background-color: black;
   border: 1px solid #d4d4d4;
-  border-radius: 4px;
-  border-left: 4px solid #0066cc;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1),
+  border-radius: 3px;
+  border-left: 3px solid #0066cc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 }
 
 .techCategory h4 {
-  margin: 0 0 12px 0;
-  font-size: 1.1rem;
+  margin: 0 0 6px 0;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: #00ff08;
   font-weight: bold;
   border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 6px;
+  padding-bottom: 3px;
 }
 
 .techItems {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 5px;
 }
 
 .techItem {
   background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
   border: 1px outset #d4d4d4;
-  border-radius: 3px;
-  padding: 6px 12px;
-  font-size: 11px;
+  border-radius: 2px;
+  padding: 3px 6px;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #333;
   transition: all 0.2s ease;
   cursor: default;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-
   font-family: "VT323", monospace;
-  font-size: 1.2rem;
   line-height: 1.1;
 }
 
@@ -662,8 +583,8 @@
   align-items: center;
   background: linear-gradient(180deg, #f0f0f0 0%, #e4e4e4 100%);
   border-top: 1px solid #a0a0a0;
-  padding: 3px 8px;
-  height: 18px;
+  padding: 2px 5px;
+  height: 14px;
   flex-shrink: 0;
   box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.8) inset;
 }
@@ -675,7 +596,7 @@
 }
 
 .statusText {
-  font-size: 10px;
+  font-size: 8px;
   color: #333;
   font-weight: 500;
 }
@@ -684,7 +605,7 @@
 @media (max-width: 768px) {
   .cardContainer {
     max-width: 100%;
-    height: 500px;
+    height: 380px;
   }
 
   .heroImageContainer {
@@ -692,57 +613,61 @@
   }
 
   .windowsDesktop {
-    gap: 16px;
+    gap: 8px;
   }
 
   .programWindow {
-    min-height: 120px;
+    min-height: 80px;
   }
 
   .overviewContent {
-    padding: 16px;
-    gap: 20px;
+    padding: 8px;
+    gap: 10px;
   }
 
   .detailsContent {
-    padding: 16px;
+    padding: 8px;
   }
 
   .techContent {
-    padding: 16px;
+    padding: 8px;
   }
 
   .tab {
-    padding: 4px 14px;
-    font-size: 10px;
-    min-width: 70px;
+    padding: 2px 8px;
+    font-size: 0.6rem;
+    min-width: 50px;
+  }
+
+  .infoTitle {
+    font-size: 1rem;
+  }
+
+  .infoDescription {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
+  .cardContainer {
+    height: 320px;
+  }
+
   .addressBar {
     flex-wrap: wrap;
     height: auto;
-    padding: 4px;
+    padding: 2px;
   }
 
   .addressInput {
     order: 3;
     width: 100%;
-    margin-top: 4px;
-  }
-
-  .menuBar {
-    display: none;
-  }
-
-  .toolbar {
-    display: none;
+    margin-top: 2px;
   }
 
   .heroActions {
     flex-direction: column;
-    gap: 6px;
+    gap: 3px;
     width: 100%;
   }
 
@@ -752,12 +677,31 @@
   }
 
   .browserTabs {
-    padding: 2px 4px 0 4px;
+    padding: 1px 2px 0 2px;
   }
 
   .tab {
-    padding: 3px 10px;
-    font-size: 9px;
-    min-width: 55px;
+    padding: 2px 6px;
+    font-size: 0.55rem;
+    min-width: 45px;
+  }
+
+  .overviewContent {
+    padding: 6px;
+    gap: 8px;
+  }
+
+  .projectInfo {
+    padding: 8px;
+  }
+
+  .infoTitle {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .infoDescription {
+    font-size: 0.75rem;
+    line-height: 1.2;
   }
 }

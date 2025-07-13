@@ -20,11 +20,9 @@
 
 .chartContainer {
   position: relative;
-  width: 430px;
-  height: 480px;
-  border: 1px solid rgba(75, 85, 99, 0.284);
+  width: 370px;
+  height: 370px;
   border-radius: 90px;
-  background-color: rgba(84, 172, 239, 0.172)
 }
 
 .centerIcon {

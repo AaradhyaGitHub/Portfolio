@@ -1,7 +1,6 @@
 // @ts-nocheck
 import React, { useState } from "react";
 import styles from "./projects.module.css";
-import FancyButton from "../components/FancyButton";
 import { Sparkles, LaptopMinimal, Smartphone } from "lucide-react";
 import WebCard from "../components/ProjectCardComponents/WebCard";
 import MobileCard from "../components/ProjectCardComponents/MobileCard";
@@ -103,7 +102,7 @@ export default function Projects() {
           image={project.image}
           title={project.title}
           description={project.description}
-          technologies={project.technologies} // Pass the whole object
+          technologies={project.technologies}
           backStory={project.projectDetails.backstory}
           howItWorks={project.projectDetails.howItWorks}
           keyFeatures={project.projectDetails.keyFeatures}
@@ -118,36 +117,39 @@ export default function Projects() {
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.header}>Projects</h1>
+      
       <div className={styles.navigation}>
-        <ul className={styles.navigationButtonsContainer}>
-          <li className={styles.navigationItems}>
-            <FancyButton
-              leftIcon={<LaptopMinimal />}
-              rightIcon={<LaptopMinimal />}
-              onClick={() => handleSelectCategory("web")}
-            >
-              Web
-            </FancyButton>
-          </li>
-          <li className={styles.navigationItems}>
-            <FancyButton
-              leftIcon={<Sparkles />}
-              rightIcon={<Sparkles />}
-              onClick={() => handleSelectCategory("highlighted")}
-            >
-              Highlighted
-            </FancyButton>
-          </li>
-          <li className={styles.navigationItems}>
-            <FancyButton
-              leftIcon={<Smartphone />}
-              rightIcon={<Smartphone />}
-              onClick={() => handleSelectCategory("mobile")}
-            >
-              Mobile
-            </FancyButton>
-          </li>
-        </ul>
+        <div className={styles.navigationButtonsContainer}>
+          <button
+            className={`${styles.navigationButton} ${
+              projectCategory === "web" ? styles.active : ""
+            }`}
+            onClick={() => handleSelectCategory("web")}
+          >
+            <LaptopMinimal size={16} />
+            Web
+          </button>
+          
+          <button
+            className={`${styles.navigationButton} ${
+              projectCategory === "highlighted" ? styles.active : ""
+            }`}
+            onClick={() => handleSelectCategory("highlighted")}
+          >
+            <Sparkles size={16} />
+            Highlighted
+          </button>
+          
+          <button
+            className={`${styles.navigationButton} ${
+              projectCategory === "mobile" ? styles.active : ""
+            }`}
+            onClick={() => handleSelectCategory("mobile")}
+          >
+            <Smartphone size={16} />
+            Mobile
+          </button>
+        </div>
       </div>
 
       <div className={styles.projectSection}>

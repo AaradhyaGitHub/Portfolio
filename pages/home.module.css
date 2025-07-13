@@ -23,7 +23,7 @@
   border: 1px solid rgba(75, 85, 99, 0.5);
   border-radius: 8px;
 
-  color: #d1d5db;
+  color: #656565;
   font-size: 0.875rem;
   font-weight: 500;
 
@@ -36,8 +36,8 @@
 
 .animationToggle:hover {
   background: rgba(17, 24, 39, 0.9);
-  border-color: rgba(215, 52, 66, 0.5);
-  color: rgba(215, 52, 66, 0.8);
+  border-color: rgba(215, 52, 66, 0.7);
+  color: rgba(215, 52, 66, 0.7);
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
@@ -138,13 +138,13 @@
 }
 
 .quoteHighlight {
-  color: rgba(215, 52, 66, 0.5);
+  color: rgba(215, 52, 66, 0.7);
 }
 
 /* Teacher credit with smooth size transitions */
 .teacherCredit {
   letter-spacing: 0.1rem;
-  color: rgba(215, 52, 66, 0.5);
+  color: rgba(215, 52, 66, 0.7);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -161,7 +161,7 @@
 }
 
 .headerIcon {
-  color: rgba(215, 52, 66, 0.5);
+  color: rgba(215, 52, 66, 0.7);
 }
 
 /* Loading Bar Styles */
@@ -187,7 +187,7 @@
   background: linear-gradient(
     90deg,
     rgba(215, 52, 66, 0.7),
-    rgba(215, 52, 66, 0.9)
+    rgba(215, 52, 66, 0.7)
   );
   border-radius: 2px;
   transition: width 0.1s ease-out;
@@ -270,7 +270,7 @@
 .name {
   font-size: 5rem;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
   line-height: 1.1;
   margin: 0;
 }
@@ -290,7 +290,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #d1d5db;
+  color: #656565;
 }
 
 .icon {
@@ -307,7 +307,7 @@
 }
 
 .descriptionText {
-  color: #9ca3af;
+  color: #656565;
   font-size: 1.125rem;
   line-height: 1.6;
   margin: 0;
@@ -359,7 +359,7 @@
   backdrop-filter: blur(8px);
   border: 1px solid rgba(75, 85, 99, 0.3);
   border-radius: 12px;
-  color: #9ca3af;
+  color: #656565;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -367,8 +367,8 @@
 
 .socialIcon:hover {
   background: rgba(17, 24, 39, 0.8);
-  border-color: rgba(215, 52, 66, 0.5);
-  color: rgba(215, 52, 66, 0.8);
+  border-color: rgba(215, 52, 66, 0.7);
+  color: rgba(215, 52, 66, 0.7);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
@@ -412,7 +412,7 @@
 .scrollIndicatorContainer {
   width: 24px;
   height: 40px;
-  border: 2px solid #4b5563;
+  border: 2px solid #656565;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -421,7 +421,7 @@
 .scrollIndicatorDot {
   width: 4px;
   height: 12px;
-  background: rgba(215, 52, 66, 0.5);
+  background: rgba(215, 52, 66, 0.7);
   border-radius: 2px;
   margin-top: 8px;
   animation: pulse 2s infinite;

@@ -524,10 +524,7 @@ export default function MyJourney() {
   return (
     <main className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Professional Journey</h1>
-        <p className={styles.subtitle}>
-          Explore my experience, education, and achievements
-        </p>
+        <h1 className={styles.title}>Education + Experience</h1>
       </div>
 
       <div className={styles.mainLayout}>

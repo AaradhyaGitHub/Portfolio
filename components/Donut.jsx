@@ -74,7 +74,7 @@ const Donut = ({
         {/* Skill image/icon background */}
         <circle
           cx={x}
-          cy={y - 18}
+          cy={y - 17}
           r="32"
           fill="rgba(255, 255, 255, 0)"
           className={styles.iconBg}
@@ -151,8 +151,8 @@ const Donut = ({
               cy="50%"
               labelLine={false}
               label={renderCustomizedLabel}
-              outerRadius={190}
-              innerRadius={120}
+              outerRadius={165}
+              innerRadius={105}
               fill="#8884d8"
               dataKey="value"
               onMouseEnter={onPieEnter}

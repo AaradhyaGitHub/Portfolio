@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./HighlightedCard.module.css";
+import styles from "./Highlightedcard.module.css";
 import { MdSportsMartialArts } from "react-icons/md";
 import { MdFactory } from "react-icons/md";
 import { GiCow } from "react-icons/gi";

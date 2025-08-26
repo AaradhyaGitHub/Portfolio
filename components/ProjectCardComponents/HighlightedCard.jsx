@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./HighlightedCard.module.css"";
+import styles from "./HighlightedCard.module.css";
 import { MdSportsMartialArts } from "react-icons/md";
 import { MdFactory } from "react-icons/md";
 import { GiCow } from "react-icons/gi";
@@ -127,7 +127,9 @@ export default function HighlightedCard({
               <div className={styles.techContainer}>
                 {technologyCategory.map((techCategory, index) => (
                   <div key={index} className={styles.techCategory}>
-                    <h5 className={styles.techCategoryTitle}>{techCategory}:</h5>
+                    <h5 className={styles.techCategoryTitle}>
+                      {techCategory}:
+                    </h5>
                     <div className={styles.techItems}>
                       {technologyItems[index].map((tech, techIndex) => (
                         <span key={techIndex} className={styles.techItem}>

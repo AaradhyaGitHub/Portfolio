@@ -31,8 +31,8 @@ export default function Navbar() {
 
           <li className={styles.navItems}>
             <Link
-              href="/gallery"
-              className={isActive("/gallery") ? styles.active : ""}
+              href="/photography"
+              className={isActive("/photography") ? styles.active : ""}
             >
               Photography
             </Link>
